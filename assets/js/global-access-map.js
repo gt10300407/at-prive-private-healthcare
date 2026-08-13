@@ -48,23 +48,36 @@ if(!svg.empty()){
   }
   function reveal(d){
     const n=nodes.filter(x=>x.id===d.id),l=labels.filter(x=>x.id===d.id),r=routes.filter(x=>x.id===d.id);
-    r.attr('opacity',0).transition().duration(220).ease(d3.easeCubicOut).attr('opacity',0.9);
-    n.attr('opacity',1);
+    r.each(function(){
+      const path=d3.select(this);
+      const len=this.getTotalLength();
+      path
+        .interrupt()
+        .attr('opacity',1)
+        .attr('stroke-dasharray',`${len} ${len}`)
+        .attr('stroke-dashoffset',len)
+        .transition()
+        .duration(440)
+        .ease(d3.easeCubicOut)
+        .attr('stroke-dashoffset',0)
+        .on('end',()=>path.attr('stroke-dasharray',null).attr('stroke-dashoffset',null));
+    });
+    n.interrupt().transition().delay(240).duration(120).attr('opacity',1);
     n.select('.ga-node-ring')
       .attr('r',5.5)
-      .transition().duration(170).attr('r',9.2)
-      .transition().duration(360).attr('r',5.5);
-    l.interrupt().transition().duration(220).attr('opacity',1);
+      .transition().delay(240).duration(160).attr('r',9.2)
+      .transition().duration(320).attr('r',5.5);
+    l.interrupt().transition().delay(260).duration(160).attr('opacity',1);
   }
 
   async function play(){
     reset();
     for(const d of dest){
       reveal(d);
-      await wait(520);
+      await wait(410);
     }
-    routes.transition().duration(240).attr('opacity',.82);
-    await wait(2800);
+    routes.transition().duration(260).attr('opacity',.82);
+    await wait(2300);
     play();
   }
   if(matchMedia('(prefers-reduced-motion:reduce)').matches){
