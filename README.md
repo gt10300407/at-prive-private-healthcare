@@ -16,3 +16,12 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - 데스크톱 scroll snap 유지 / 모바일 proximity 완화
 
 기존 `atinc-*` 저장소는 수정하지 않는다.
+
+
+## V3 Luxury refinement
+- Korean/body typography: Noto Sans KR first, English/logo: Bodoni Moda first
+- Solid block CTAs replaced by hairline luxury CTAs
+- Signature Journey/Medical Access copy updated
+- Fixed particle globe restored; no rotation; sequential hub/route illumination only
+- Programs filter rebuilt with visible counts and active category heading
+- Program detail CTA rebuilt with restrained hairline treatment
