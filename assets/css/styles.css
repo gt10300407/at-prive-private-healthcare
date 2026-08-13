@@ -234,3 +234,16 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 @media(max-width:1280px){.founder-main-grid{grid-template-columns:.36fr .64fr;gap:3vw}.founder-platform-title{font-size:28px}.founder-profile-copy{font-size:13.5px}.competency-icons article{min-height:112px}.competency-icons strong{font-size:10.5px}.founder-photo-lux{min-height:330px}.founder-detail-block li{font-size:11.5px}.detail-title strong{font-size:18px}}
 @media(max-width:1080px){.founder{overflow:auto}.founder .section-shell{min-height:auto;height:auto}.founder-main-grid{grid-template-columns:1fr 1.35fr}.competency-icons{grid-template-columns:repeat(3,1fr)}.competency-icons article:nth-child(3){border-right:0}.competency-icons article:nth-child(-n+3){border-bottom:1px solid rgba(183,150,92,.28)}.founder-details{grid-template-columns:1fr}.founder-detail-block,.founder-detail-block+ .founder-detail-block{padding:18px 0;border-right:0;border-bottom:1px solid rgba(183,150,92,.25)}.founder-detail-block:last-child{border-bottom:0}.founder-photo-lux{height:420px}}
 @media(max-width:760px){.founder-main-grid{display:block}.founder-photo-lux{height:52vh;min-height:390px}.founder-identity{display:block}.founder-identity p{margin-top:4px}.founder-story{margin-top:34px}.founder-platform-intro{padding-inline:0}.founder-platform-title{font-size:30px}.founder-platform-intro>p:last-child br{display:none}.founder-profile-copy{font-size:14.5px}.competency-icons{grid-template-columns:1fr 1fr}.competency-icons article:nth-child(n){border-right:1px solid rgba(183,150,92,.25);border-bottom:1px solid rgba(183,150,92,.25)}.competency-icons article:nth-child(2n){border-right:0}.founder-details{margin-top:24px}.cert-list{grid-template-columns:1fr}}
+
+
+/* ================================================================
+   V7 — Private Access Atlas
+   Quiet regional connections, no radial/starburst network language
+   ================================================================ */
+.network-globe-label{
+  background:linear-gradient(90deg,rgba(17,15,11,.12),rgba(17,15,11,.58));
+  border-left-color:rgba(217,199,161,.32);
+  box-shadow:none
+}
+.network-globe-label span{letter-spacing:.02em;color:rgba(255,255,255,.48)}
+.network-principles span{color:rgba(217,199,161,.66)}

@@ -44,3 +44,12 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - GLOBAL PRIVATE ACCESS: CHINA added, all visible routes anchored to actual land positions, slower sequence, restrained final horizon bloom.
 - Founder section: redesigned as luxury brochure/profile layout based on provided reference; portrait remains intentionally blank for later replacement.
 - Only map and founder sections materially changed from V5.
+
+
+## V7 Private Access Atlas
+- radial/starburst routes removed
+- fixed Korea-centered regional access chain
+- no projectile particles
+- slow hairline route reveal + destination glow
+- quiet continuation paths from regional hubs to hidden hemisphere
+- founder section unchanged from V6
