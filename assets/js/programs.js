@@ -1,0 +1,4 @@
+(async()=>{const grid=document.getElementById('programGrid'); const tabs=[...document.querySelectorAll('[data-filter]')]; let programs=[];
+try{programs=await (await fetch('data/programs.json')).json();}catch(e){grid.innerHTML='<p class="loading">프로그램 데이터를 불러오지 못했습니다.</p>';return;}
+const render=(filter='ALL')=>{const list=filter==='ALL'?programs:programs.filter(p=>p.type===filter);grid.innerHTML=list.map(p=>`<a class="program-tile" href="program.html?id=${encodeURIComponent(p.id)}"><span class="type">${p.type}</span><h2>${p.title}</h2><h3>${p.ko}</h3><p>${p.summary}</p><div class="tags">${p.tags.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</div></a>`).join('');};
+tabs.forEach(btn=>btn.addEventListener('click',()=>{tabs.forEach(b=>b.classList.remove('active'));btn.classList.add('active');render(btn.dataset.filter);}));render();})();
