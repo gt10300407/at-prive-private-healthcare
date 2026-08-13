@@ -38,3 +38,9 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - 지구본 위치 마커를 위경도 투영이 아닌 실제 globe artwork 좌표에 고정해 한국/일본/아시아 포인트 오차 수정
 - 서비스/상담 섹션 대형 카피를 의도한 3줄 구성으로 분리해 PC 화면 잘림 방지
 - 1~3번 피드백 외 나머지 구조와 애니메이션은 V4 유지
+
+
+## V6 — Map & Founder refinement
+- GLOBAL PRIVATE ACCESS: CHINA added, all visible routes anchored to actual land positions, slower sequence, restrained final horizon bloom.
+- Founder section: redesigned as luxury brochure/profile layout based on provided reference; portrait remains intentionally blank for later replacement.
+- Only map and founder sections materially changed from V5.
