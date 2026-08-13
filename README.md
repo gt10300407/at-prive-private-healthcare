@@ -55,3 +55,9 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - founder section unchanged from V6
 
 V13: private-services header/layout + concierge public-copy/line-break fix.
+
+## V14 — PRIVATE WAY TO KOREA
+- Global map narrative changed from Seoul/global-network wording to Korea-centered private medical access.
+- Hero copy: “당신이 어디에 계시든, 한국의 의료는 가까워집니다.”
+- Map home label changed from SEOUL to KOREA and moved to a Korea-centered coordinate.
+- Supporting labels: PRIVATE CONSULTATION / CURATED MEDICAL ACCESS / CONTINUITY OF CARE.

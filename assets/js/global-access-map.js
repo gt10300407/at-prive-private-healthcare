@@ -15,7 +15,7 @@ if(!svg.empty()){
   gridG.append('path').attr('class','ga-grid').attr('d',geoPath(d3.geoGraticule10()));
 
   const raw=[
-    {id:'SEOUL',label:'SEOUL',coord:[126.9780,37.5665],home:true,dx:13,dy:-14,anchor:'start'},
+    {id:'KOREA',label:'KOREA',coord:[127.7669,35.9078],home:true,dx:13,dy:-14,anchor:'start'},
     {id:'CHINA',label:'CHINA',coord:[116.4074,39.9042],dx:-24,dy:-12,bend:-14,anchor:'end'},
     {id:'JAPAN',label:'JAPAN',coord:[139.6503,35.6762],dx:13,dy:-7,bend:-10,anchor:'start'},
     {id:'SEA',label:'SOUTHEAST ASIA',coord:[103.8198,1.3521],dx:12,dy:17,bend:38,anchor:'start'},
