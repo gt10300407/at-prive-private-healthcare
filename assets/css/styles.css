@@ -171,3 +171,32 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .concierge-fab .fab-monogram{font-size:22px}
   .concierge-panel{right:14px;bottom:14px;width:calc(100vw - 28px)}
 }
+
+
+/* ================================================================
+   V5 — typography overflow fixes
+   ================================================================ */
+.service-layout,
+.contact-layout{
+  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  gap:5.2vw;
+}
+.service-copy,
+.contact-copy{min-width:0;max-width:720px}
+.service-copy h2,
+.contact-copy h2{
+  max-width:100%;
+  font-size:clamp(43px,3.2vw,54px);
+  line-height:1.22;
+  letter-spacing:-.045em;
+}
+.service-copy h2 .title-line,
+.contact-copy h2 .title-line{white-space:nowrap}
+@media(max-width:1180px){
+  .service-copy h2,
+  .contact-copy h2{font-size:clamp(40px,3.7vw,50px)}
+}
+@media(max-width:900px){
+  .service-copy h2 .title-line,
+  .contact-copy h2 .title-line{white-space:normal}
+}
