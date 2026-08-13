@@ -25,3 +25,10 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - Fixed particle globe restored; no rotation; sequential hub/route illumination only
 - Programs filter rebuilt with visible counts and active category heading
 - Program detail CTA rebuilt with restrained hairline treatment
+
+
+## V4 refinement
+- 주요 대형 제목 줄바꿈 고정
+- 실제 대륙 형태를 가진 고정형 럭셔리 지구본 적용
+- Korea 중심 순차 연결선 + 최종 글로벌 확장 웨이브
+- Concierge 런처를 58px 소형 원형으로 축소, hover 시 pill 확장

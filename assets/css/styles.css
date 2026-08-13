@@ -86,3 +86,88 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 
 @media(max-width:1080px){.network-layout{grid-template-columns:1fr}.network-content{align-self:start;padding-top:calc(var(--header) + 70px)}.network-globe-label{display:none}}
 @media(max-width:760px){.button{min-width:220px;min-height:62px}.hero-copy h1{font-size:50px}.hero-lead{font-size:16px}.section-title h2,.chapter-heading h2,.access-intro h2,.network-content h2,.service-copy h2,.contact-copy h2{font-size:41px}.network-vignette{background:linear-gradient(180deg,rgba(8,8,7,.96) 0%,rgba(8,8,7,.77) 47%,rgba(8,8,7,.25) 100%)}.network-layout{display:block;width:88vw}.network-content{padding-top:calc(var(--header) + 55px)}.network-content>p:not(.kicker){font-size:15px}}
+
+
+/* ================================================================
+   V4 — readable luxury typography, protected line breaks,
+   fixed geographic globe and compact concierge launcher
+   ================================================================ */
+
+.title-line{display:block}
+.hero-copy h1{max-width:860px;font-size:clamp(54px,4.15vw,68px);line-height:1.17;letter-spacing:-.045em}
+.hero-copy h1 .title-line{white-space:nowrap}
+.hero-copy h1 .title-gold{color:var(--gold2)}
+.hero-inner{grid-template-columns:1.08fr .92fr;gap:3.5vw}
+.hero-stage{max-width:660px}
+
+.section-title h2 .title-line,
+.chapter-heading h2 .title-line,
+.access-intro h2 .title-line,
+.network-content h2 .title-line,
+.service-copy h2 .title-line,
+.contact-copy h2 .title-line,
+.profile-intro h3 .title-line{white-space:nowrap}
+
+.chapter-heading h2{max-width:820px}
+.access-intro h2{max-width:660px}
+.network-content h2{max-width:650px}
+.service-copy h2{max-width:690px}
+.contact-copy h2{max-width:720px}
+
+/* globe now uses an actual fixed geographic landform texture */
+.network{overflow:hidden;background:radial-gradient(circle at 75% 50%,#2b2518 0,#14120d 42%,#080807 76%);isolation:isolate}
+.network:after{content:'';position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 74% 50%,rgba(217,199,161,.055),transparent 38%),
+  linear-gradient(90deg,rgba(8,8,7,.16),transparent 50%)}
+.network canvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.network-vignette{z-index:2;background:linear-gradient(90deg,rgba(8,8,7,.985) 0%,rgba(8,8,7,.91) 28%,rgba(8,8,7,.30) 48%,rgba(8,8,7,.08) 73%,rgba(8,8,7,.24) 100%)}
+.network-layout{z-index:3}
+.network-globe-label{z-index:4}
+
+/* compact launcher: small circle at rest, elegant pill on hover */
+.concierge-fab{
+  right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;
+  padding:0;border:1px solid rgba(217,199,161,.58);
+  display:flex;align-items:center;justify-content:center;gap:0;
+  overflow:hidden;background:rgba(16,15,12,.92);
+  transition:width .32s cubic-bezier(.22,.61,.36,1),border-radius .32s ease,background .25s ease;
+  box-shadow:0 9px 28px rgba(0,0,0,.24)
+}
+.concierge-fab .fab-monogram{
+  display:block!important;flex:0 0 auto;font-family:var(--serif);
+  font-size:25px;line-height:1;color:var(--gold2);letter-spacing:-.05em
+}
+.concierge-fab .fab-label{
+  display:block!important;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;
+  margin:0;font-size:9px;letter-spacing:.14em;color:var(--white);
+  transition:max-width .3s ease,opacity .22s ease,margin .3s ease
+}
+.concierge-fab:hover,.concierge-fab:focus-visible{width:190px;border-radius:29px;background:rgba(19,17,13,.98)}
+.concierge-fab:hover .fab-label,.concierge-fab:focus-visible .fab-label{max-width:130px;opacity:1;margin-left:12px}
+.concierge-fab i{top:8px;right:9px;width:6px;height:6px}
+.concierge-panel{right:22px;bottom:22px}
+
+@media(max-width:1280px){
+  .hero-copy h1{font-size:clamp(50px,4.2vw,62px)}
+  .hero-inner{grid-template-columns:1fr 1fr}
+  .section-title h2 .title-line,
+  .chapter-heading h2 .title-line,
+  .access-intro h2 .title-line,
+  .network-content h2 .title-line,
+  .service-copy h2 .title-line,
+  .contact-copy h2 .title-line,
+  .profile-intro h3 .title-line{white-space:normal}
+}
+@media(max-width:1080px){
+  .hero-copy h1 .title-line{white-space:normal}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-stage{display:none}
+}
+@media(max-width:760px){
+  .hero-copy h1{font-size:clamp(43px,12vw,54px)}
+  .concierge-fab{right:14px;bottom:14px;width:52px;height:52px}
+  .concierge-fab:hover,.concierge-fab:focus-visible{width:52px;border-radius:50%}
+  .concierge-fab:hover .fab-label,.concierge-fab:focus-visible .fab-label{max-width:0;opacity:0;margin:0}
+  .concierge-fab .fab-monogram{font-size:22px}
+  .concierge-panel{right:14px;bottom:14px;width:calc(100vw - 28px)}
+}
