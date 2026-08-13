@@ -53,3 +53,5 @@ V1 시각 검수 피드백을 반영한 재설계본.
 - slow hairline route reveal + destination glow
 - quiet continuation paths from regional hubs to hidden hemisphere
 - founder section unchanged from V6
+
+V13: private-services header/layout + concierge public-copy/line-break fix.

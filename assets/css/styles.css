@@ -277,3 +277,36 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 
 .service-links{display:flex;gap:25px;margin-top:24px}.service-links a{font-size:10px;letter-spacing:.12em;color:var(--gold3);padding-bottom:6px;border-bottom:1px solid rgba(141,109,56,.30)}
 @media(max-width:760px){.service-links{flex-wrap:wrap}}
+
+/* ================================================================
+   V13 — concierge panel public copy / Korean line-break polish
+   ================================================================ */
+.concierge-panel{
+  width:min(470px,calc(100vw - 44px));
+  padding:42px 40px 38px;
+}
+.concierge-panel h3{
+  margin:16px 0 18px;
+  font-size:clamp(30px,2.2vw,36px);
+  line-height:1.35;
+  letter-spacing:-.045em;
+  font-weight:400;
+  word-break:keep-all;
+  overflow-wrap:normal;
+}
+.concierge-panel p:not(.kicker){
+  margin:0 0 26px;
+  font-size:15px;
+  line-height:1.9;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+.concierge-panel .button{width:100%;min-width:0}
+.panel-title-break{display:none}
+@media(max-width:760px){
+  .concierge-panel{width:calc(100vw - 28px);padding:34px 28px 30px}
+  .concierge-panel h3{font-size:clamp(28px,7.4vw,34px);line-height:1.32}
+  .concierge-panel p:not(.kicker){font-size:14.5px;line-height:1.85}
+  .panel-title-break{display:block}
+}
+
