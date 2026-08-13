@@ -41,25 +41,33 @@ if(!svg.empty()){
   breathe();
 
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
-  function reset(){routes.interrupt().attr('opacity',0).attr('stroke-dasharray',null).attr('stroke-dashoffset',null);nodes.filter(d=>!d.home).interrupt().attr('opacity',0);labels.filter(d=>!d.home).interrupt().attr('opacity',0)}
+  function reset(){
+    routes.interrupt().attr('opacity',0).attr('stroke-dasharray',null).attr('stroke-dashoffset',null);
+    nodes.filter(d=>!d.home).interrupt().attr('opacity',0);
+    labels.filter(d=>!d.home).interrupt().attr('opacity',0);
+  }
   function reveal(d){
-    const n=nodes.filter(x=>x.id===d.id),l=labels.filter(x=>x.id===d.id);
-    n.attr('opacity',1);n.select('.ga-node-ring').attr('r',5.5).transition().duration(220).attr('r',9).transition().duration(520).attr('r',5.5);
-    l.transition().delay(140).duration(300).attr('opacity',1);
+    const n=nodes.filter(x=>x.id===d.id),l=labels.filter(x=>x.id===d.id),r=routes.filter(x=>x.id===d.id);
+    r.attr('opacity',0).transition().duration(220).ease(d3.easeCubicOut).attr('opacity',0.9);
+    n.attr('opacity',1);
+    n.select('.ga-node-ring')
+      .attr('r',5.5)
+      .transition().duration(170).attr('r',9.2)
+      .transition().duration(360).attr('r',5.5);
+    l.interrupt().transition().duration(220).attr('opacity',1);
   }
 
   async function play(){
     reset();
     for(const d of dest){
-      const r=routes.filter(x=>x.id===d.id),el=r.node(),len=el.getTotalLength();
-      r.attr('opacity',1).attr('stroke-dasharray',`${len} ${len}`).attr('stroke-dashoffset',len)
-       .transition().duration(1180).ease(d3.easeCubicInOut).attr('stroke-dashoffset',0);
-      setTimeout(()=>reveal(d),1100);
-      await wait(1370);
+      reveal(d);
+      await wait(520);
     }
-    routes.attr('stroke-dasharray',null).attr('stroke-dashoffset',0).transition().duration(420).attr('opacity',.78);
-    await wait(3900);
+    routes.transition().duration(240).attr('opacity',.82);
+    await wait(2800);
     play();
   }
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches){routes.attr('opacity',.52);nodes.attr('opacity',1);labels.attr('opacity',1)}else play();
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    routes.attr('opacity',.52);nodes.attr('opacity',1);labels.attr('opacity',1)
+  }else play();
 }
