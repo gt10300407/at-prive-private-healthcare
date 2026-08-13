@@ -250,3 +250,27 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 
 /* V8 — remove globe watermark/card for a cleaner luxury presentation */
 .network-globe-label{display:none!important}
+
+
+/* V9 — Real geographic Global Private Access map */
+.realmap-network{position:relative;overflow:hidden;background:#090806}
+.realmap-network .network-vignette{z-index:1;pointer-events:none}
+.realmap-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(430px,.82fr) minmax(650px,1.18fr);align-items:center;width:100%;height:100%;padding:0 clamp(24px,3.2vw,64px)}
+.realmap-layout .network-content{position:relative;left:auto;top:auto;transform:none;max-width:690px;padding:0 clamp(10px,2vw,26px)}
+.realmap-layout .network-content h2{font-size:clamp(48px,4vw,72px);line-height:1.16;letter-spacing:-.045em}
+.realmap-layout .network-content>p:not(.kicker){font-size:clamp(15px,1.05vw,18px);line-height:1.9;max-width:620px}
+.realmap-visual{position:relative;width:100%;height:min(88vh,780px);min-height:620px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#globalAccessMap{display:block;width:112%;height:100%;transform:translateX(4%);overflow:visible}
+.ga-country{fill:rgba(179,151,99,.10);stroke:rgba(216,188,124,.16);stroke-width:.62;vector-effect:non-scaling-stroke}
+.ga-country.is-korea{fill:rgba(216,188,124,.23);stroke:rgba(244,221,173,.60)}
+.ga-grid{fill:none;stroke:rgba(216,188,124,.042);stroke-width:.48;vector-effect:non-scaling-stroke}
+.ga-route{fill:none;stroke:rgba(245,222,170,.68);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;filter:url(#globalSoftGlow)}
+.ga-node-ring{fill:rgba(9,8,6,.70);stroke:rgba(216,188,124,.66);stroke-width:1;vector-effect:non-scaling-stroke}
+.ga-node-core{fill:#efd7a3;filter:url(#globalSoftGlow)}
+.ga-label{font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;font-size:11px;font-weight:500;letter-spacing:.06em;fill:rgba(238,223,190,.72)}
+.ga-label.home{font-size:14px;font-weight:600;fill:rgba(250,242,225,.96)}
+#gaRings circle{fill:none;stroke:rgba(216,188,124,.16);vector-effect:non-scaling-stroke}
+#gaRings circle:nth-child(2){stroke-opacity:.55}#gaRings circle:nth-child(3){stroke-opacity:.28}
+@media(max-width:1280px){.realmap-layout{grid-template-columns:minmax(390px,.92fr) minmax(570px,1.08fr);padding-inline:28px}.realmap-layout .network-content h2{font-size:clamp(43px,4vw,60px)}.realmap-visual{min-height:560px}}
+@media(max-width:980px){.realmap-network{height:auto!important;min-height:100svh}.realmap-layout{display:block;height:auto;padding:92px 7vw 48px}.realmap-layout .network-content{max-width:760px}.realmap-visual{height:auto;min-height:560px;margin-top:20px}#globalAccessMap{width:108%;height:auto;transform:translateX(-2%)}}
+@media(max-width:640px){.realmap-layout{padding:76px 22px 34px}.realmap-layout .network-content h2{font-size:clamp(38px,10vw,50px)}.realmap-visual{min-height:440px;margin-top:10px}#globalAccessMap{width:126%;transform:translateX(-10%)}.ga-label{font-size:8.5px}.ga-label.home{font-size:10px}}

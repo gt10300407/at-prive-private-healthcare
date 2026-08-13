@@ -116,15 +116,38 @@
       </div>
     </section>
 
-    <section class="chapter network dark" id="network">
-      <canvas id="networkCanvas" aria-label="at PRIVÉ 글로벌 프라이빗 의료 접근 네트워크 시각화"></canvas>
+    <section class="chapter network dark realmap-network" id="network">
       <div class="network-vignette"></div>
-      <div class="network-layout">
+      <div class="network-layout realmap-layout">
         <div class="network-content reveal">
           <p class="kicker">GLOBAL PRIVATE ACCESS</p>
           <h2><span class="title-line">한국의 의료 자원을,</span><span class="title-line">하나의 프라이빗 액세스로.</span></h2>
           <p>국내외 VIP 고객이 복잡한 의료기관과 일정을 직접 탐색하지 않도록, 필요한 전문 의료 접근과 전체 여정을 하나의 창구에서 조율합니다.</p>
           <div class="network-principles"><span>CURATED ACCESS</span><span>PRIVATE COORDINATION</span><span>GLOBAL CONTINUITY</span></div>
+        </div>
+        <div class="realmap-visual reveal" aria-label="서울에서 세계로 확장되는 프라이빗 의료 접근 지도">
+          <svg id="globalAccessMap" viewBox="0 0 1000 760" role="img" aria-labelledby="globalMapTitle globalMapDesc">
+            <title id="globalMapTitle">서울에서 세계로 연결되는 프라이빗 의료 접근 지도</title>
+            <desc id="globalMapDesc">실제 세계지도 데이터와 도시 위경도를 기반으로 서울에서 중국, 일본, 동남아, 중동, 유럽, 북미, 오세아니아로 연결되는 경로를 순차적으로 보여줍니다.</desc>
+            <defs>
+              <radialGradient id="globalMapHalo" cx="72%" cy="46%" r="52%">
+                <stop offset="0%" stop-color="#d8bc7c" stop-opacity=".13"/>
+                <stop offset="58%" stop-color="#a8864e" stop-opacity=".035"/>
+                <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="globalSoftGlow" x="-120%" y="-120%" width="340%" height="340%">
+                <feGaussianBlur stdDeviation="4.2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="1000" height="760" fill="url(#globalMapHalo)"/>
+            <g id="gaWorld"></g>
+            <g id="gaGrid"></g>
+            <g id="gaRoutes"></g>
+            <g id="gaNodes"></g>
+            <g id="gaLabels"></g>
+            <g id="gaRings" opacity="0"><circle r="23"></circle><circle r="42"></circle><circle r="64"></circle></g>
+          </svg>
         </div>
       </div>
     </section>
@@ -264,5 +287,6 @@
   <aside class="concierge-panel" id="conciergePanel" aria-hidden="true"><button class="panel-close" id="panelClose" aria-label="닫기">×</button><p class="kicker gold">PRIVATE CONCIERGE</p><h3>프라이빗 상담을 시작할까?</h3><p>향후 AI 컨시어지를 연결할 자리야. 현재는 상담 영역으로 안내해.</p><a class="button dark-button" href="#contact"><span>PRIVATE CONSULTATION</span><b>상담으로 이동</b></a></aside>
 
   <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/global-access-map.js"></script>
 </body>
 </html>
