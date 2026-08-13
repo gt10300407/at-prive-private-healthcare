@@ -15,46 +15,29 @@
   const GOLD='217,199,161', GOLD_DEEP='183,150,92', ASSET=1800;
 
   const NODES={
-    KOREA:{name:'KOREA',px:1118,py:800,home:true,dx:19,dy:-18},
-    CHINA:{name:'CHINA',px:980,py:820,dx:-62,dy:-15},
-    JAPAN:{name:'JAPAN',px:1240,py:842,dx:18,dy:-8},
-    INDIA:{px:625,py:1085},
-    SEA:{name:'SOUTHEAST ASIA',px:865,py:1235,dx:-18,dy:28},
-    SINGAPORE:{px:815,py:1315},
-    INDONESIA:{px:900,py:1400},
-    MIDDLE:{name:'MIDDLE EAST',px:270,py:890,dx:18,dy:-9},
-    AUS_W:{px:875,py:1580},
-    AUSTRALIA:{name:'AUSTRALIA',px:1035,py:1585,dx:18,dy:17},
-    AUS_E:{px:1165,py:1585},
-    N_CHINA:{px:900,py:745},
-    S_CHINA:{px:1010,py:930},
-    VIETNAM:{px:900,py:1115}
+    KOREA:{name:'KOREA',px:1118,py:800,home:true,dx:18,dy:-18},
+    CHINA:{name:'CHINA',px:965,py:780,dx:-52,dy:-8},
+    JAPAN:{name:'JAPAN',px:1245,py:842,dx:17,dy:-4},
+    SEA:{name:'SOUTHEAST ASIA',px:865,py:1238,dx:-18,dy:28},
+    MIDDLE:{name:'MIDDLE EAST',px:320,py:885,dx:18,dy:-8},
+    AUSTRALIA:{name:'AUSTRALIA',px:1038,py:1584,dx:18,dy:18}
   };
 
   // Routes form a curated regional network. Only the first two originate directly from Korea;
-  // the rest continue from one regional access point to the next, avoiding a starburst effect.
+  // the rest extend as a single curated trunk, keeping the network calm and legible.
   const ROUTES=[
-    {from:'KOREA',to:'CHINA',curve:-.11,label:'CHINA'},
-    {from:'KOREA',to:'JAPAN',curve:.15,label:'JAPAN'},
-    {from:'CHINA',to:'N_CHINA',curve:-.08},
-    {from:'CHINA',to:'S_CHINA',curve:.08},
-    {from:'S_CHINA',to:'VIETNAM',curve:.10},
-    {from:'VIETNAM',to:'SEA',curve:.08,label:'SOUTHEAST ASIA'},
-    {from:'SEA',to:'SINGAPORE',curve:.08},
-    {from:'SINGAPORE',to:'INDONESIA',curve:.10},
-    {from:'INDONESIA',to:'AUS_W',curve:.10},
-    {from:'AUS_W',to:'AUSTRALIA',curve:.07,label:'AUSTRALIA'},
-    {from:'AUSTRALIA',to:'AUS_E',curve:.06},
-    {from:'CHINA',to:'INDIA',curve:-.14},
-    {from:'INDIA',to:'MIDDLE',curve:-.12,label:'MIDDLE EAST'}
+    {from:'KOREA',to:'CHINA',curve:-.09,label:'CHINA'},
+    {from:'KOREA',to:'JAPAN',curve:.12,label:'JAPAN'},
+    {from:'CHINA',to:'SEA',curve:.11,label:'SOUTHEAST ASIA'},
+    {from:'SEA',to:'AUSTRALIA',curve:.10,label:'AUSTRALIA'},
+    {from:'CHINA',to:'MIDDLE',curve:-.16,label:'MIDDLE EAST'}
   ];
 
   // After the visible network is complete, just three faint continuation paths leave regional hubs
   // toward the hidden hemisphere. They do not originate from Korea and do not carry labels.
   const CONTINUITY=[
-    {from:'MIDDLE',a:-2.88,curve:-.12},
-    {from:'N_CHINA',a:-1.80,curve:-.10},
-    {from:'AUS_E',a:.54,curve:.12}
+    {from:'MIDDLE',a:-2.84,curve:-.11},
+    {from:'AUSTRALIA',a:.56,curve:.11}
   ];
 
   function resize(){
@@ -83,15 +66,15 @@
 
   function drawFilament(a,b,progress,{curve=.12,active=false,complete=false,alpha=.48}={}){
     if(progress<=0)return;
-    const steps=86,stop=Math.max(1,Math.floor(steps*Math.min(1,progress)));
+    const steps=104,stop=Math.max(1,Math.floor(steps*Math.min(1,progress)));
     // soft bloom under the hairline — no travelling particle
     ctx.save();ctx.lineCap='round';
     ctx.beginPath();
     for(let i=0;i<=stop;i++){const p=bezierPoint(a,b,i/steps,curve);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}
-    ctx.strokeStyle=`rgba(${GOLD},${active?.10:complete?.035:.06})`;ctx.lineWidth=active?5.2:3.5;ctx.shadowColor=`rgba(${GOLD},${active?.22:.08})`;ctx.shadowBlur=active?13:6;ctx.stroke();
+    ctx.strokeStyle=`rgba(${GOLD},${active?.09:complete?.03:.05})`;ctx.lineWidth=active?4.8:3.2;ctx.shadowColor=`rgba(${GOLD},${active?.18:.06})`;ctx.shadowBlur=active?10:5;ctx.stroke();
     ctx.shadowBlur=0;ctx.beginPath();
     for(let i=0;i<=stop;i++){const p=bezierPoint(a,b,i/steps,curve);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}
-    ctx.strokeStyle=`rgba(${GOLD},${active?alpha:complete?.22:.32})`;ctx.lineWidth=active?1.15:.72;ctx.stroke();ctx.restore();
+    ctx.strokeStyle=`rgba(${GOLD},${active?alpha:complete?.18:.28})`;ctx.lineWidth=active?1.0:.65;ctx.stroke();ctx.restore();
   }
 
   function drawNode(item,{active=false,visible=true,home=false,labelAlpha=1}={}){
@@ -101,19 +84,19 @@
       const wave=((now%5600)/5600),r=9+wave*18;
       ctx.strokeStyle=`rgba(255,232,188,${.30*(1-wave)})`;ctx.lineWidth=.8;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.stroke();
     }
-    const pulse=home?7.5:active?6.4:4.6;
+    const pulse=home?7.4:active?5.9:4.2;
     ctx.fillStyle=home?'rgba(255,239,207,.98)':`rgba(${GOLD},${active?.78:.50})`;
     ctx.shadowColor=home?'rgba(255,226,169,.65)':`rgba(${GOLD},${active?.38:.12})`;ctx.shadowBlur=home?17:active?11:4;
-    ctx.beginPath();ctx.arc(p.x,p.y,home?3.1:2.1,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,home?3.1:1.9,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
     ctx.strokeStyle=home?'rgba(255,237,202,.75)':`rgba(${GOLD_DEEP},${active?.62:.38})`;ctx.lineWidth=.9;ctx.beginPath();ctx.arc(p.x,p.y,pulse,0,Math.PI*2);ctx.stroke();
-    if(item.name&&labelAlpha>0){ctx.globalAlpha=labelAlpha;ctx.font=`600 ${home?13:10.5}px "Noto Sans KR","Apple SD Gothic Neo",sans-serif`;ctx.fillStyle=home?'rgba(248,240,222,.96)':`rgba(${GOLD},.76)`;ctx.fillText(item.name,p.x+(item.dx||12),p.y+(item.dy||-8))}
+    if(item.name&&labelAlpha>0){ctx.globalAlpha=labelAlpha;ctx.font=`600 ${home?13:10.2}px "Noto Sans KR","Apple SD Gothic Neo",sans-serif`;ctx.fillStyle=home?'rgba(248,240,222,.96)':`rgba(${GOLD},.76)`;ctx.fillText(item.name,p.x+(item.dx||12),p.y+(item.dy||-8))}
     ctx.restore();
   }
 
   function draw(){
     ctx.clearRect(0,0,w,h); drawGlobe();
-    const total=52000,t=performance.now()%total;
-    const start=1500,gap=3100,duration=2350;
+    const total=40000,t=performance.now()%total;
+    const start=1100,gap=2350,duration=1750;
     const state={};
     Object.keys(NODES).forEach(k=>state[k]={visible:k==='KOREA',active:false,labelAlpha:k==='KOREA'?1:0});
 
@@ -126,21 +109,21 @@
     });
 
     // quiet continuity: only after all visible land routes are complete
-    const continuityStart=start+(ROUTES.length-1)*gap+duration+1800,{cx,cy,R}=frameGeom();
+    const continuityStart=start+(ROUTES.length-1)*gap+duration+1150,{cx,cy,R}=frameGeom();
     CONTINUITY.forEach((route,i)=>{
-      const raw=(t-(continuityStart+i*2500))/2600,p=ease(Math.max(0,Math.min(1,raw))); if(raw<=0)return;
+      const raw=(t-(continuityStart+i*1850))/1850,p=ease(Math.max(0,Math.min(1,raw))); if(raw<=0)return;
       const a=assetPoint(NODES[route.from]),b={x:cx+Math.cos(route.a)*R*.985,y:cy+Math.sin(route.a)*R*.985};
       drawFilament(a,b,p,{curve:route.curve,active:raw<1,complete:raw>=1,alpha:.20});
-      if(raw>=.72){const fade=Math.min(1,(raw-.72)/.28);ctx.save();ctx.fillStyle=`rgba(${GOLD},${.22*fade})`;ctx.shadowColor=`rgba(${GOLD},${.15*fade})`;ctx.shadowBlur=8;ctx.beginPath();ctx.arc(b.x,b.y,2.3,0,Math.PI*2);ctx.fill();ctx.restore()}
+      if(raw>=.78){const fade=Math.min(1,(raw-.78)/.22);ctx.save();ctx.fillStyle=`rgba(${GOLD},${.16*fade})`;ctx.shadowColor=`rgba(${GOLD},${.10*fade})`;ctx.shadowBlur=5;ctx.beginPath();ctx.arc(b.x,b.y,1.9,0,Math.PI*2);ctx.fill();ctx.restore()}
     });
 
     // Draw nodes last so the access points sit above the filaments.
     Object.entries(NODES).forEach(([key,item])=>drawNode(item,{...state[key],home:key==='KOREA'}));
 
     // Once the atlas is complete, the whole network simply breathes rather than firing again.
-    const settled=continuityStart+(CONTINUITY.length-1)*2500+3200;
-    if(t>settled&&t<settled+7000){const glow=.018+.012*Math.sin((t-settled)/900);const {cx,cy,R}=frameGeom();ctx.save();ctx.strokeStyle=`rgba(${GOLD},${glow})`;ctx.lineWidth=10;ctx.shadowColor=`rgba(${GOLD},${glow})`;ctx.shadowBlur=26;ctx.beginPath();ctx.arc(cx,cy,R*.965,0,Math.PI*2);ctx.stroke();ctx.restore()}
-    if(t>50000){const fade=(t-50000)/2000;ctx.fillStyle=`rgba(8,8,7,${Math.min(.56,fade*.56)})`;ctx.fillRect(0,0,w,h)}
+    const settled=continuityStart+(CONTINUITY.length-1)*1850+2400;
+    if(t>settled&&t<settled+5200){const glow=.018+.012*Math.sin((t-settled)/900);const {cx,cy,R}=frameGeom();ctx.save();ctx.strokeStyle=`rgba(${GOLD},${glow})`;ctx.lineWidth=10;ctx.shadowColor=`rgba(${GOLD},${glow})`;ctx.shadowBlur=26;ctx.beginPath();ctx.arc(cx,cy,R*.965,0,Math.PI*2);ctx.stroke();ctx.restore()}
+    if(t>38200){const fade=(t-38200)/1800;ctx.fillStyle=`rgba(8,8,7,${Math.min(.56,fade*.56)})`;ctx.fillRect(0,0,w,h)}
     requestAnimationFrame(draw);
   }
   window.addEventListener('resize',resize); globeImg.onload=()=>resize(); resize(); draw();

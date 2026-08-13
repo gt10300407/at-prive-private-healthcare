@@ -247,3 +247,6 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 }
 .network-globe-label span{letter-spacing:.02em;color:rgba(255,255,255,.48)}
 .network-principles span{color:rgba(217,199,161,.66)}
+
+/* V8 — remove globe watermark/card for a cleaner luxury presentation */
+.network-globe-label{display:none!important}
