@@ -586,3 +586,81 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 .ga-label{
   fill:rgba(220,220,216,.50);
 }
+
+
+/* ================================================================
+   V21 — Content Architecture Rebuild
+   A: Private Health Office / B: Curated Medical Access /
+   C: Global Medical Journey
+   ================================================================ */
+
+.service-models{
+  background:
+    radial-gradient(circle at 84% 18%,rgba(198,171,119,.09),transparent 28%),
+    linear-gradient(135deg,#090a0a 0%,#11110f 52%,#0a0a09 100%);
+}
+.service-models-shell{display:flex;flex-direction:column;justify-content:center}
+.service-axis-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(221,206,177,.16);border-left:1px solid rgba(221,206,177,.16)}
+.service-axis-card{position:relative;min-height:430px;padding:36px 34px 32px;border-right:1px solid rgba(221,206,177,.16);border-bottom:1px solid rgba(221,206,177,.16);background:rgba(255,255,255,.012);display:flex;flex-direction:column}
+.service-axis-card .axis-index{font-family:var(--serif);font-size:36px;color:rgba(221,198,153,.72)}
+.service-axis-card small{margin-top:42px;color:var(--gold2);font-size:10px;letter-spacing:.16em}
+.service-axis-card h3{margin:14px 0 18px;font-size:26px;line-height:1.42;font-weight:400;color:#f7f2e9;word-break:keep-all}
+.service-axis-card p{margin:0;color:rgba(255,255,255,.58);font-size:14.5px;line-height:1.85;word-break:keep-all}
+.axis-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.axis-tags span{padding:7px 9px;border:1px solid rgba(221,198,153,.18);color:rgba(221,198,153,.68);font-size:9px;letter-spacing:.1em}
+.service-axis-card>a{margin-top:auto;padding-top:28px;color:var(--gold2);font-size:11px;letter-spacing:.1em}
+
+.health-office{
+  background:
+    radial-gradient(circle at 78% 38%,rgba(199,169,113,.13),transparent 28%),
+    linear-gradient(135deg,#080909,#15130f 58%,#090909 100%);
+}
+.health-office-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:6vw;align-items:center}
+.health-office-copy h2{margin:0 0 26px;font-size:clamp(48px,4.3vw,68px);font-weight:300;line-height:1.2;letter-spacing:-.05em;color:#f5f0e7}
+.health-office-copy>p:not(.kicker){max-width:600px;color:rgba(255,255,255,.62);font-size:15.5px;line-height:1.9;word-break:keep-all}
+.office-dossier{border:1px solid rgba(222,201,163,.22);background:rgba(255,255,255,.018)}
+.office-dossier-head{min-height:92px;padding:24px 28px;border-bottom:1px solid rgba(222,201,163,.16);display:grid;grid-template-columns:1fr auto;align-items:center;position:relative}
+.office-dossier-head span{font-size:9px;letter-spacing:.16em;color:rgba(222,201,163,.62)}
+.office-dossier-head strong{grid-column:1;margin-top:5px;color:#f7f2e8;font-family:var(--serif);font-size:25px;font-weight:400;letter-spacing:.04em}
+.office-dossier-head b{grid-column:2;grid-row:1/3;font-family:var(--serif);font-size:24px;color:rgba(222,201,163,.78);font-weight:400}
+.office-dossier-grid{display:grid;grid-template-columns:1fr 1fr}
+.office-dossier-grid article{min-height:210px;padding:28px;border-right:1px solid rgba(222,201,163,.14);border-bottom:1px solid rgba(222,201,163,.14)}
+.office-dossier-grid article:nth-child(2n){border-right:0}
+.office-dossier-grid article:nth-last-child(-n+2){border-bottom:0}
+.office-dossier-grid small{color:rgba(222,201,163,.58);font-family:var(--serif)}
+.office-dossier-grid strong{display:block;margin:42px 0 12px;color:#eee8dd;font-size:12px;letter-spacing:.11em}
+.office-dossier-grid p{margin:0;color:rgba(255,255,255,.52);font-size:13.5px;line-height:1.75;word-break:keep-all}
+
+.journey-file-chapter{background:linear-gradient(180deg,#f7f2e8 0%,#f4efe5 100%)}
+
+.global-journey{
+  background:
+    radial-gradient(circle at 18% 72%,rgba(173,148,103,.07),transparent 28%),
+    linear-gradient(135deg,#080909,#11110f 64%,#080909);
+}
+.global-journey-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(222,201,163,.17);border-left:1px solid rgba(222,201,163,.17)}
+.global-journey-grid article{min-height:390px;padding:34px;border-right:1px solid rgba(222,201,163,.17);border-bottom:1px solid rgba(222,201,163,.17)}
+.global-journey-grid article>span{font-family:var(--serif);font-size:23px;color:rgba(222,201,163,.7)}
+.global-journey-grid small{display:block;margin-top:46px;color:var(--gold2);font-size:10px;letter-spacing:.16em}
+.global-journey-grid h3{margin:9px 0 20px;color:#f7f2e9;font-size:27px;font-weight:400}
+.global-journey-grid ul{list-style:none;padding:0;margin:0}
+.global-journey-grid li{position:relative;padding:7px 0 7px 15px;color:rgba(255,255,255,.58);font-size:13.5px;line-height:1.65;word-break:keep-all}
+.global-journey-grid li:before{content:'—';position:absolute;left:0;color:rgba(222,201,163,.52)}
+.global-journey-actions{display:flex;gap:28px;margin-top:30px}
+.global-journey-actions a{font-size:11px;letter-spacing:.1em;color:var(--gold2);border-bottom:1px solid rgba(222,201,163,.3);padding-bottom:6px}
+
+@media(max-width:1180px){
+  .service-axis-grid,.global-journey-grid{grid-template-columns:1fr}
+  .service-axis-card{min-height:auto}
+  .health-office-layout{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .service-axis-card{padding:28px 22px}
+  .service-axis-card h3{font-size:22px}
+  .office-dossier-grid{grid-template-columns:1fr}
+  .office-dossier-grid article:nth-child(n){border-right:0;border-bottom:1px solid rgba(222,201,163,.14)}
+  .office-dossier-grid article:last-child{border-bottom:0}
+  .health-office-copy h2{font-size:clamp(38px,10vw,48px)}
+  .global-journey-grid article{min-height:auto;padding:28px 22px}
+  .global-journey-actions{flex-direction:column;gap:14px}
+}

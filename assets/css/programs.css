@@ -225,3 +225,11 @@
   .program-detail-page #programDetail{padding-bottom:72px}
   .closing-notice{margin-bottom:0}
 }
+
+/* V21 service-axis catalog */
+.program-tabs button{min-width:130px}
+@media(max-width:840px){
+  .catalog-top{grid-template-columns:1fr}
+  .program-tabs{display:grid;grid-template-columns:1fr 1fr}
+  .program-tabs button{min-width:0;border-bottom:1px solid rgba(141,109,56,.18)}
+}
