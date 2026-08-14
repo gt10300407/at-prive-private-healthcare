@@ -228,3 +228,10 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Reframed Business Areas / Education / Selected Certifications as three paper-like folio panels with subtle tonal variation.
 - Kept every approved Founder fact, education item and certification.
 - No `SINCE / FOCUS / FOUNDATION` strip.
+
+
+## MK1 R6 — Founder Name In Portrait
+- Moved the founder identity block inside the portrait card.
+- The name no longer sits at the abrupt background transition point.
+- Added a warm translucent ivory caption plate attached to the portrait.
+- Founder content, competencies, education and certifications are unchanged.

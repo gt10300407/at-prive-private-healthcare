@@ -1918,3 +1918,75 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
     border-bottom:0;
   }
 }
+
+
+/* ================================================================
+   MK1 R6 — Founder identity integrated into portrait
+   ================================================================ */
+
+/* The founder name now belongs to the portrait card itself rather than
+   sitting on the visual transition between portrait and content fields. */
+.founder-r5-portrait{
+  padding:26px 30px 26px 0;
+}
+
+.founder-r5-photo{
+  min-height:500px;
+  padding-bottom:108px;
+}
+
+.founder-r5-photo>.founder-r5-nameplate{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:4;
+  min-height:90px;
+  margin:0;
+  padding:20px 24px 18px;
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  border-top:1px solid rgba(143,106,50,.22);
+  background:linear-gradient(180deg,rgba(245,238,228,.92),rgba(236,224,207,.98));
+  backdrop-filter:blur(8px);
+}
+
+.founder-r5-photo>.founder-r5-nameplate strong{
+  display:block;
+  color:#201b16;
+  font-size:29px;
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.founder-r5-photo>.founder-r5-nameplate span{
+  display:block;
+  margin-top:7px;
+  color:#6e6356;
+  font-size:11px;
+}
+
+.founder-r5-photo>.founder-r5-nameplate small{
+  max-width:142px;
+  color:#98713d;
+  font-size:7.5px;
+  line-height:1.55;
+  letter-spacing:.13em;
+  text-align:right;
+}
+
+/* Lift the temporary placeholder caption so it does not collide with the identity plate. */
+.founder-r5-photo>p{
+  margin-bottom:92px;
+}
+
+/* Remove the old outside-nameplate styling path entirely. */
+.founder-r5-portrait>.founder-r5-nameplate{
+  display:none!important;
+}
+
+@media(max-width:1320px){
+  .founder-r5-photo{min-height:465px}
+}
