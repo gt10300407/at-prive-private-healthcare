@@ -61,3 +61,11 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Hero copy: “당신이 어디에 계시든, 한국의 의료는 가까워집니다.”
 - Map home label changed from SEOUL to KOREA and moved to a Korea-centered coordinate.
 - Supporting labels: PRIVATE CONSULTATION / CURATED MEDICAL ACCESS / CONTINUITY OF CARE.
+
+
+## V18 — HERO MAP LUXURY
+- HERO color system shifted from yellow-brown to graphite black + restrained champagne accents.
+- Korea map core reveals `at PRIVÉ` first; KOREA is secondary microcopy.
+- All global routes extend outward together in a slow coordinated animation.
+- Destination points and labels appear while lines complete, then the network settles quietly with at PRIVÉ remaining as the anchor.
+- Hero body line-break fixed so `일정, 통역·체류, 사후관리까지 하나의 흐름으로 조율합니다.` is a dedicated line on desktop.

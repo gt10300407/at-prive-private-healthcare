@@ -394,3 +394,109 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .standard-card{min-height:auto;padding:24px}
   .standard-card h3{font-size:20px}
 }
+
+/* ================================================================
+   V18 — HERO MAP LUXURY BLACK / CHAMPAGNE SYSTEM
+   Darker graphite map, restrained champagne accents, at PRIVÉ core.
+   ================================================================ */
+.hero{
+  background:
+    radial-gradient(circle at 78% 44%,rgba(203,181,139,.095) 0%,rgba(203,181,139,.025) 27%,transparent 46%),
+    radial-gradient(circle at 20% 28%,rgba(255,255,255,.025),transparent 32%),
+    linear-gradient(118deg,#050607 0%,#08090a 47%,#0d0e0f 100%);
+}
+.hero:before{
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.34),rgba(0,0,0,.05) 48%,rgba(0,0,0,.12)),
+    linear-gradient(180deg,rgba(255,255,255,.015),transparent 28%);
+}
+.hero-copy h1 .title-gold{color:#d9c7a6}
+.hero-lead{color:rgba(244,241,235,.74)}
+.hero-lead-final{display:inline-block;white-space:nowrap}
+.hero-promise{color:rgba(236,232,224,.43)}
+.hero-promise span+span:before{color:#bfa676}
+
+.hero-map-shell{
+  min-height:660px;
+  border:1px solid rgba(226,214,191,.13);
+  background:
+    radial-gradient(circle at 75% 39%,rgba(202,180,137,.085),transparent 28%),
+    linear-gradient(180deg,rgba(255,255,255,.018),rgba(255,255,255,.004)),
+    #090a0b;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.018),0 34px 90px rgba(0,0,0,.18);
+}
+.hero-map-shell:before{
+  background:
+    radial-gradient(circle at 77% 39%,rgba(222,205,170,.065),transparent 34%),
+    linear-gradient(90deg,rgba(0,0,0,.08),transparent 48%,rgba(0,0,0,.02));
+}
+.hero-map-shell:after{
+  background:
+    linear-gradient(180deg,rgba(6,7,8,.05) 0,rgba(6,7,8,0) 34%,rgba(6,7,8,.34) 100%),
+    linear-gradient(90deg,rgba(6,7,8,.12),transparent 28%,transparent 72%,rgba(6,7,8,.08));
+}
+.hero-map-intro{top:34px;left:36px;max-width:340px}
+.hero-map-intro span{color:rgba(210,190,151,.68)}
+.hero-map-intro strong{font-size:29px;color:#eee7da;letter-spacing:-.02em}
+.hero-map-intro p{max-width:310px;color:rgba(232,228,220,.44)}
+.hero-map-note{left:36px;bottom:32px;border-left-color:rgba(203,181,139,.34)}
+.hero-map-note b{color:#c8ad79}
+.hero-map-note span{color:rgba(235,231,223,.60)}
+.hero-map-visual #globalAccessMap{width:118%;transform:translateX(3%) translateY(2%)}
+
+/* map: graphite land, pearl/champagne details only */
+.ga-country{
+  fill:rgba(170,174,176,.055);
+  stroke:rgba(213,216,214,.11);
+  stroke-width:.58;
+}
+.ga-country.is-korea{
+  fill:rgba(212,192,154,.20);
+  stroke:rgba(233,218,188,.55);
+}
+.ga-grid{stroke:rgba(218,220,218,.025);stroke-width:.44}
+.ga-route{
+  stroke:rgba(226,213,187,.68);
+  stroke-width:1.08;
+  filter:url(#globalSoftGlow);
+}
+.ga-node-ring{fill:rgba(8,9,10,.90);stroke:rgba(205,181,137,.62);stroke-width:.9}
+.ga-node-core{fill:#e8dbc1;filter:url(#globalSoftGlow)}
+.ga-label{
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.07em;
+  fill:rgba(230,228,222,.58);
+}
+.ga-home-brand{
+  font-family:"Bodoni Moda","Didot",serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:.015em;
+  fill:#f4eee2;
+}
+.ga-home-country{
+  font-family:"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  font-size:8.5px;
+  font-weight:500;
+  letter-spacing:.18em;
+  fill:rgba(201,177,132,.78);
+}
+#gaRings circle{stroke:rgba(201,177,132,.20)}
+
+@media(max-width:1280px){
+  .hero-map-shell{min-height:590px}
+}
+@media(max-width:1080px){
+  .hero-map-shell{min-height:530px}
+}
+@media(max-width:760px){
+  .hero-lead-final{white-space:normal}
+  .hero-map-shell{min-height:430px}
+  .hero-map-intro{left:18px;top:18px}
+  .hero-map-intro strong{font-size:22px}
+  .hero-map-note{left:18px;right:18px;bottom:18px}
+  .hero-map-visual #globalAccessMap{width:148%;transform:translateX(-6%) translateY(2%)}
+  .ga-home-brand{font-size:18px}
+  .ga-home-country{font-size:7px}
+}
