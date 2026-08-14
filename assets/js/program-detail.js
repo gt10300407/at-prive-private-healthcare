@@ -114,12 +114,14 @@
         : '해외 고객이 한국 의료를 이용할 때 필요한 의료 일정과 국제 컨시어지 범위를 입국 전·체류 중·귀국 후로 구분해 조율합니다.');
 
     root.innerHTML=`
-      <section class="detail-hero luxury-detail-hero">
+      <section class="detail-hero luxury-detail-hero editorial-detail-hero">
         <div class="detail-hero-inner">
           <span class="type">${esc(axisLabel)}</span>
           <p class="detail-en">${esc(p.title)}</p>
-          <h1>${esc(statement)}</h1>
+          <h1>${esc(p.ko)}</h1>
+          <h2 class="detail-value">${esc(statement)}</h2>
           <p>${esc(p.summary)}</p>
+          ${p.detail_meta?`<div class="detail-meta-strip"><div><small>FORMAT</small><strong>${esc(p.detail_meta.format)}</strong></div><div><small>TIMEFRAME</small><strong>${esc(p.detail_meta.timeline)}</strong></div><div><small>KEY ACCESS</small><strong>${esc(p.detail_meta.focus)}</strong></div></div>`:''}
         </div>
       </section>
       <section class="detail-body detail-body-lux">
@@ -136,12 +138,14 @@
           </div>
         </div>
       </section>
+      ${isGlobal?`<section class="global-detail-map"><div class="global-map-copy"><small>GLOBAL MEDICAL ACCESS</small><h2>한국 의료를 위한 국제 여정을, 한눈에.</h2><p>지도는 글로벌 접근을 상징하고, 실제 여정은 고객의 의료 목적과 체류 일정에 따라 개별적으로 구성됩니다.</p></div><div class="global-detail-map-visual"><svg id="globalAccessMap" viewBox="0 0 1000 760" role="img" aria-label="세계 각지와 한국을 연결하는 글로벌 의료 접근 지도"><defs><radialGradient id="globalMapHalo" cx="72%" cy="46%" r="52%"><stop offset="0%" stop-color="#d7c6a5" stop-opacity=".045"/><stop offset="58%" stop-color="#9f9584" stop-opacity=".010"/><stop offset="100%" stop-color="#000" stop-opacity="0"/></radialGradient><filter id="globalSoftGlow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="4.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="1000" height="760" fill="url(#globalMapHalo)"/><g id="gaWorld"></g><g id="gaGrid"></g><g id="gaRoutes"></g><g id="gaNodes"></g><g id="gaLabels"></g><g id="gaRings" opacity="0"><circle r="23"></circle><circle r="42"></circle><circle r="64"></circle></g></svg></div></section>`:''}
       <div class="deep-content">${deep}</div>
       <section class="closing-notice">
         <div><p>MEDICAL NOTICE</p><h2>의학적 판단과 의료행위는 의료진이 담당합니다.</h2></div>
         <p>${esc(p.notice||'at PRIVÉ는 직접 진단·치료를 제공하는 의료기관이 아닙니다. 전문 의료기관의 상담 접근, 예약과 일정 커뮤니케이션 및 필요한 비의료 지원을 조율합니다. 모든 검사, 진단, 처방, 시술 및 치료는 해당 의료기관과 담당 의료진의 판단에 따라 진행됩니다.')}</p>
       </section>
     `;
+    if(isGlobal){import('./global-access-map.js?v=31').catch(()=>{});}
   }catch(e){
     root.innerHTML='<section class="not-found"><div><h1>프로그램을 불러오지 못했습니다.</h1><a href="programs.html">전체 프로그램 보기</a></div></section>';
   }

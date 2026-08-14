@@ -158,3 +158,17 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - No CHA/partner institution name, proprietary program name, hospital network number, equipment claim or treatment-effect claim is reused.
 - The visual is an abstract editorial health map rather than an anatomy diagram, so at PRIVÉ remains a luxury healthcare concierge rather than appearing to be a hospital.
 - Added subtle motion only to small nodes; reduced-motion users see a static version.
+
+
+## V31 — Desktop Editorial Restructure
+- Home reduced from 10 chapters to 7: Hero / Why / Three Services / Four Signature Journeys / How It Works / Founder / Consultation.
+- Removed world map, slogan strip and scroll ornament from the home hero.
+- Replaced hero map with a restrained Private Journey File dossier visual.
+- Removed customer-facing A/B/C letters.
+- Removed standalone Medical Access, Health Office, Journey File and Global Journey chapters from home; their detail remains in program pages.
+- Dark chapters reduced to Hero and Signature Journeys.
+- Founder reduced to 3 trust pillars plus Selected Credentials.
+- Floating concierge remains hidden until after the hero.
+- Program detail hero now leads with program name, followed by value statement, description and practical metadata.
+- Global map moved to the Global Medical Journey detail page only.
+- V30 deep clinical/editorial content remains intact.
