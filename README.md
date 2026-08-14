@@ -172,3 +172,19 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Program detail hero now leads with program name, followed by value statement, description and practical metadata.
 - Global map moved to the Global Medical Journey detail page only.
 - V30 deep clinical/editorial content remains intact.
+
+
+## MK1 — Desktop Baseline (2026-08-14)
+
+This build is the agreed first desktop baseline before MK2 content/editorial completion and mobile work.
+
+### MK1 typography changes
+- Kept **Bodoni Moda** for the `at` wordmark and selective signature details.
+- Added **Cormorant Garamond** as the editorial display serif.
+- Changed `Curated Healthcare, Personally Managed.` to the quieter display serif and reduced its scale.
+- Shortened Founder proof titles and tuned desktop typography so they stay on one line when space genuinely permits.
+- No forced `<br>` was added. Narrower widths return to natural wrapping.
+
+### Next milestone
+- MK2: desktop content/editorial completion, service clarity, copy de-duplication, detail-page prioritization, visual rhythm and final QA.
+- Mobile work starts only after MK2 desktop is approved.
