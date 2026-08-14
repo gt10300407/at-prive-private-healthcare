@@ -201,3 +201,11 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
   - 9 Selected Certifications
 - Founder content is reorganized into a premium editorial profile, but no approved reference item is intentionally removed.
 - MK1 remains the desktop baseline; this is a corrective MK1 revision, not MK2.
+
+
+## MK1 R3 — Founder Luxury Editorial Rebuild
+- Founder section rebuilt for denser, more premium desktop composition.
+- All approved Founder facts and credentials are retained.
+- Portrait area is visually treated but remains a placeholder until the actual Founder photo is supplied.
+- Added credibility anchors: Since 2003 / VIP & Healthcare / Legal & Negotiation.
+- Retains 6 Core Competencies, 5 Business Areas, 2 Education items and 9 Selected Certifications.
