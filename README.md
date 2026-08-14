@@ -69,3 +69,9 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - All global routes extend outward together in a slow coordinated animation.
 - Destination points and labels appear while lines complete, then the network settles quietly with at PRIVÉ remaining as the anchor.
 - Hero body line-break fixed so `일정, 통역·체류, 사후관리까지 하나의 흐름으로 조율합니다.` is a dedicated line on desktop.
+
+
+## V22 hotfix
+- Fixed malformed HTML structure at the bottom of index.html.
+- `#contact` section is no longer nested inside `#founder`.
+- Restored founder detail blocks and separated consultation section back into its own full-width chapter.
