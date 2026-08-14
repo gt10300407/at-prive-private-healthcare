@@ -235,3 +235,10 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - The name no longer sits at the abrupt background transition point.
 - Added a warm translucent ivory caption plate attached to the portrait.
 - Founder content, competencies, education and certifications are unchanged.
+
+
+## MK1 R7 — Founder Compact Height
+- Reduced Founder section vertical footprint by roughly 15–20% on desktop.
+- Portrait block reduced from the oversized R6 height to a tighter editorial proportion.
+- Core Competencies and lower Business / Education / Certifications panels were vertically compressed without removing content.
+- Forced the Founder → Consultation transition to remain flush and set the scroll-shell background to ivory so no dark strip can appear between light chapters.

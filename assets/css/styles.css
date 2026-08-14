@@ -1990,3 +1990,122 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 @media(max-width:1320px){
   .founder-r5-photo{min-height:465px}
 }
+
+
+/* ================================================================
+   MK1 R7 — Founder compact height / clean section ending
+   ================================================================ */
+
+/* Founder should feel like one composed brochure page, not an extra-tall chapter. */
+#founder{
+  min-height:100svh;
+  margin:0;
+  border-radius:0;
+  overflow:hidden;
+}
+
+#founder .founder-r5-shell{
+  min-height:100svh;
+  height:auto;
+  padding-top:calc(var(--header) + 22px);
+  padding-bottom:30px;
+  justify-content:center;
+}
+
+/* Compress the upper portrait/story stage without deleting information. */
+.founder-r5-portrait{
+  padding-top:18px;
+  padding-bottom:18px;
+}
+
+.founder-r5-photo{
+  min-height:390px;
+  padding-top:22px;
+  padding-left:22px;
+  padding-right:22px;
+  padding-bottom:92px;
+}
+
+.founder-r5-photo>.founder-r5-nameplate{
+  min-height:78px;
+  padding:16px 20px 14px;
+}
+
+.founder-r5-photo>.founder-r5-nameplate strong{
+  font-size:27px;
+}
+
+.founder-r5-photo>p{
+  margin-bottom:74px;
+}
+
+.founder-r5-main{
+  padding-top:24px;
+  padding-bottom:18px;
+}
+
+.founder-r5-intro h2{
+  margin-top:14px;
+  margin-bottom:14px;
+  font-size:clamp(32px,2.45vw,44px);
+  line-height:1.16;
+}
+
+.founder-r5-intro>p:last-child{
+  font-size:12.8px;
+  line-height:1.72;
+}
+
+.founder-r5-core{
+  margin-top:24px;
+  padding-top:16px;
+}
+
+.founder-r5-core-list article{
+  padding-top:11px;
+  padding-bottom:12px;
+}
+
+.founder-r5-core-list strong{
+  font-size:15.2px;
+  line-height:1.22;
+}
+
+/* Compress the lower folio to remove the visually heavy tail. */
+.founder-r5-folio{
+  margin-top:20px;
+}
+
+.founder-r5-folio-card{
+  min-height:188px;
+  padding-top:21px;
+  padding-bottom:18px;
+}
+
+.founder-r5-folio-card li{
+  margin:6px 0;
+  font-size:10.9px;
+  line-height:1.42;
+}
+
+/* Keep the next section flush: no exposed dark body background between chapters. */
+#founder + #contact{
+  margin-top:0;
+  border-radius:0;
+}
+
+.snap-shell{
+  background:var(--paper);
+}
+
+@media(max-width:1320px){
+  .founder-r5-photo{
+    min-height:370px;
+  }
+  .founder-r5-intro h2{
+    font-size:clamp(30px,2.3vw,40px);
+  }
+  .founder-r5-folio-card{
+    min-height:180px;
+  }
+}
