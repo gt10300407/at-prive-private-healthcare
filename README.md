@@ -219,3 +219,12 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
   - restrained champagne accents
   - light lower credentials panel for readability
 - All approved Founder content remains intact.
+
+
+## MK1 R5 — Founder Editorial Recomposition
+- Rebuilt Founder section structure, not just its color.
+- Removed the heavy graphite block from R4.
+- Changed Core Competencies from boxed 3×2 cards to an open 2-column editorial list.
+- Reframed Business Areas / Education / Selected Certifications as three paper-like folio panels with subtle tonal variation.
+- Kept every approved Founder fact, education item and certification.
+- No `SINCE / FOCUS / FOUNDATION` strip.
