@@ -98,3 +98,21 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Removed forced `<br>` line breaks from Founder competency labels.
 - Founder Experience headline stays on one line on desktop whenever width permits.
 - Competency text now wraps naturally only when the card width requires it.
+
+
+## 웹사이트 타이포그래피 / 줄바꿈 규칙
+
+- 제목과 본문에 임의의 `<br>` 태그를 넣지 않는다.
+- 디자인을 위해 문장을 억지로 2줄·3줄로 나누지 않는다.
+- 기본적으로 브라우저의 자연스러운 줄바꿈을 사용한다.
+- 한국어는 의미 단위가 깨지지 않도록 `word-break: keep-all`을 기본으로 사용한다.
+- 문장 끝 조사·어미나 1~3글자짜리 단어가 다음 줄에 혼자 남는 고아 줄(orphan line)을 허용하지 않는다.
+- 예: `기준으 / 로.` 또는 `관리합니 / 다.` 같은 형태는 금지한다.
+- 제목이 영역에 맞지 않으면 줄바꿈을 강제로 추가하지 말고 폰트 크기, letter-spacing, max-width, 컬럼 폭을 먼저 조정한다.
+- 제목 줄 수는 결과적으로 결정되어야 하며, 코드에서 미리 줄 수를 고정하지 않는다.
+- `<span class="title-line">`으로 문장마다 줄을 강제하지 않는다. 꼭 필요한 브랜드 카피에만 예외적으로 사용한다.
+- 데스크톱에서는 가능한 한 자연스러운 긴 호흡을 유지하고, 모바일에서만 화면 폭에 맞춰 자연스럽게 줄어들게 한다.
+- CSS에서는 `word-break: keep-all`, 필요 시 `text-wrap: balance`를 사용하되 `white-space: nowrap`은 문장이 실제로 충분히 들어갈 때만 사용한다.
+- 작업 후 1920px / 1440px / 1280px / 모바일 화면에서 제목 끝에 1~3글자만 떨어진 줄이 없는지 확인한다.
+- 줄바꿈이 애매하면 강제로 나누지 않는 쪽을 우선한다.
+- 강제 줄바꿈을 선호하지 않는다. 특별한 이유가 없다면 `<br>`을 사용하지 말고, 한 단어나 조사만 다음 줄에 남는 경우 반드시 레이아웃을 수정한다.
