@@ -561,3 +561,28 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .ga-home-country{font-size:6.2px}
   .ga-label{font-size:8px}
 }
+
+
+/* ================================================================
+   V20 — static luxury map
+   Removed travelling-beam animation entirely.
+   ================================================================ */
+.ga-route-glow{
+  stroke:rgba(213,202,180,.16);
+  stroke-width:2.1;
+  filter:url(#globalSoftGlow);
+}
+.ga-route{
+  stroke:rgba(224,220,211,.46);
+  stroke-width:.72;
+  filter:none;
+}
+.ga-node-ring{
+  stroke:rgba(201,181,145,.48);
+}
+.ga-node-core{
+  fill:rgba(238,229,211,.88);
+}
+.ga-label{
+  fill:rgba(220,220,216,.50);
+}

@@ -65,18 +65,12 @@ if (!svg.empty()) {
   const routeGlow = routeSets.append('path')
     .attr('class', 'ga-route-glow')
     .attr('d', d => curve(home, d))
-    .attr('pathLength', 100)
-    .attr('opacity', 0)
-    .attr('stroke-dasharray', '100 100')
-    .attr('stroke-dashoffset', 100);
+    .attr('opacity', 0);
 
   const routes = routeSets.append('path')
     .attr('class', 'ga-route')
     .attr('d', d => curve(home, d))
-    .attr('pathLength', 100)
-    .attr('opacity', 0)
-    .attr('stroke-dasharray', '100 100')
-    .attr('stroke-dashoffset', 100);
+    .attr('opacity', 0);
 
   const nodes = nodeG.selectAll('g')
     .data(dest)
@@ -133,20 +127,14 @@ if (!svg.empty()) {
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   function resetVisuals() {
-    routeGlow.interrupt()
-      .attr('opacity', 0)
-      .attr('stroke-dasharray', '100 100')
-      .attr('stroke-dashoffset', 100);
-
-    routes.interrupt()
-      .attr('opacity', 0)
-      .attr('stroke-dasharray', '100 100')
-      .attr('stroke-dashoffset', 100);
-
+    routeGlow.interrupt().attr('opacity', 0);
+    routes.interrupt().attr('opacity', 0);
     nodes.interrupt().attr('opacity', 0);
     labels.interrupt().attr('opacity', 0);
     homeNode.interrupt().attr('opacity', 0);
-    homeBrand.interrupt().attr('opacity', 0).attr('transform', `translate(${home.x - 18},${home.y - 18})`);
+    homeBrand.interrupt()
+      .attr('opacity', 0)
+      .attr('transform', `translate(${home.x - 18},${home.y - 18})`);
     rings.interrupt().attr('opacity', 0);
     rings.selectAll('circle').interrupt().attr('opacity', 0);
   }
@@ -178,41 +166,38 @@ if (!svg.empty()) {
     });
   }
 
-  function drawAllRoutes() {
-    // Keep stroke-dasharray constant for the whole animation.
-    // Only stroke-dashoffset moves, preventing the one-frame gap/jump
-    // that can occur when switching from dashed to normal stroke rendering.
+  function revealNetwork() {
+    // No travelling beam / dash animation.
+    // The entire network appears as a calm, static hairline composition.
     routeGlow
       .interrupt()
-      .attr('opacity', 0.22)
-      .attr('stroke-dasharray', '100 100')
-      .attr('stroke-dashoffset', 100)
       .transition()
-      .duration(2550)
-      .ease(d3.easeCubicInOut)
-      .attr('stroke-dashoffset', 0);
+      .duration(1100)
+      .ease(d3.easeCubicOut)
+      .attr('opacity', 0.055);
 
     routes
       .interrupt()
-      .attr('opacity', 0.86)
-      .attr('stroke-dasharray', '100 100')
-      .attr('stroke-dashoffset', 100)
       .transition()
-      .duration(2550)
-      .ease(d3.easeCubicInOut)
-      .attr('stroke-dashoffset', 0);
+      .duration(1100)
+      .ease(d3.easeCubicOut)
+      .attr('opacity', 0.34);
 
     nodes
-      .transition().delay(1820).duration(520).ease(d3.easeCubicOut)
-      .attr('opacity', 1);
+      .interrupt()
+      .transition()
+      .delay(220)
+      .duration(820)
+      .ease(d3.easeCubicOut)
+      .attr('opacity', 0.74);
 
     labels
-      .transition().delay(1870).duration(620).ease(d3.easeCubicOut)
-      .attr('opacity', 0.72);
-
-    nodes.select('.ga-node-ring')
-      .transition().delay(2050).duration(260).attr('r', 7.4)
-      .transition().duration(500).attr('r', 5.2);
+      .interrupt()
+      .transition()
+      .delay(360)
+      .duration(900)
+      .ease(d3.easeCubicOut)
+      .attr('opacity', 0.62);
   }
 
   function settleNetwork() {
@@ -252,7 +237,7 @@ if (!svg.empty()) {
     await wait(420);
     revealCore();
     await wait(1050);
-    drawAllRoutes();
+    revealNetwork();
     await wait(2650);
     settleNetwork();
     await wait(3300);
@@ -270,8 +255,8 @@ if (!svg.empty()) {
   if (matchMedia('(prefers-reduced-motion:reduce)').matches) {
     homeNode.attr('opacity', 1);
     homeBrand.attr('opacity', 1);
-    routeGlow.attr('opacity', 0.05).attr('stroke-dashoffset', 0);
-    routes.attr('opacity', 0.32).attr('stroke-dashoffset', 0);
+    routeGlow.attr('opacity', 0.045);
+    routes.attr('opacity', 0.32);
     nodes.attr('opacity', 0.72);
     labels.attr('opacity', 0.58);
   } else {
