@@ -209,3 +209,13 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Portrait area is visually treated but remains a placeholder until the actual Founder photo is supplied.
 - Added credibility anchors: Since 2003 / VIP & Healthcare / Legal & Negotiation.
 - Retains 6 Core Competencies, 5 Business Areas, 2 Education items and 9 Selected Certifications.
+
+
+## MK1 R4 — Founder Color Balance
+- Removed the added `SINCE / FOCUS / FOUNDATION` strip.
+- Reworked Founder section color balance rather than adding more content:
+  - warm ivory portrait side
+  - graphite Founder Experience / Core Competencies panel
+  - restrained champagne accents
+  - light lower credentials panel for readability
+- All approved Founder content remains intact.

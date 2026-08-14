@@ -1472,3 +1472,132 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .founder-lux-bottom{grid-template-columns:1fr}
   .founder-detail-card,.founder-detail-card + .founder-detail-card{min-height:auto;padding:22px 0;border-right:0;border-bottom:1px solid rgba(143,106,47,.18)}
 }
+
+
+/* ================================================================
+   MK1 R4 — Founder Color Balance
+   User direction: add stronger luxury color contrast; remove SINCE strip.
+   ================================================================ */
+
+#founder{
+  background:#eee5d8;
+}
+
+.founder-lux-top{
+  gap:0;
+  align-items:stretch;
+  border:1px solid rgba(125,91,42,.24);
+  background:#f3ede4;
+  box-shadow:0 26px 70px rgba(42,31,18,.06);
+}
+
+/* Portrait side stays warm and quiet. */
+.founder-lux-portrait{
+  padding:28px;
+  background:
+    radial-gradient(circle at 70% 18%,rgba(255,255,255,.82),transparent 25%),
+    linear-gradient(145deg,#f4eee5 0%,#e9dece 100%);
+}
+.founder-portrait-frame{
+  height:100%;
+  border-color:rgba(149,112,55,.34);
+  background:rgba(255,255,255,.22);
+}
+.founder-portrait-placeholder{
+  min-height:460px;
+  background:
+    radial-gradient(circle at 72% 23%,rgba(255,255,255,.80),transparent 27%),
+    linear-gradient(145deg,rgba(185,145,82,.12),rgba(255,255,255,.24) 45%,rgba(117,84,41,.06));
+}
+.portrait-caption strong{color:#211b16}
+.portrait-caption span{color:#6f6457}
+
+/* Main profile side becomes graphite — stronger luxury contrast. */
+.founder-lux-story{
+  padding:46px 50px 44px;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(179,141,79,.10),transparent 25%),
+    linear-gradient(145deg,#1e1d1a 0%,#29261f 100%);
+  color:#f4efe7;
+}
+.founder-lux-story .kicker.gold{
+  color:#c4a16b;
+}
+.founder-lux-story>h2{
+  margin-top:18px;
+  color:#f4efe7;
+  max-width:900px;
+  font-size:clamp(34px,2.65vw,48px);
+}
+.founder-lux-lead{
+  color:#c9c0b3;
+  max-width:860px;
+  margin-bottom:30px;
+}
+
+/* Core competencies sit directly on the dark panel. */
+.founder-core-lux{
+  margin-top:34px;
+  padding-top:22px;
+  border-top:1px solid rgba(211,174,116,.28);
+}
+.founder-lux-story .founder-lux-label>span{
+  color:#c9a56b;
+}
+.founder-lux-story .founder-lux-label>b{
+  color:#f0e8dc;
+}
+.founder-core-lux-grid{
+  border-color:rgba(212,177,119,.24);
+}
+.founder-core-lux-grid article{
+  min-height:108px;
+  background:rgba(255,255,255,.018);
+  border-color:rgba(212,177,119,.20);
+}
+.founder-core-lux-grid article>span{
+  color:#caa56c;
+}
+.founder-core-lux-grid strong{
+  color:#efe7dc;
+  font-size:15.2px;
+  line-height:1.28;
+}
+
+/* Credentials remain on a refined light panel to keep dense information readable. */
+.founder-lux-bottom{
+  margin-top:0;
+  padding:0 2px;
+  background:rgba(249,245,238,.58);
+  border-top:0;
+  border-bottom:1px solid rgba(125,91,42,.25);
+}
+.founder-detail-card{
+  min-height:218px;
+  padding-top:30px;
+  padding-bottom:26px;
+}
+.founder-detail-card li{
+  color:#5b5145;
+  font-size:11.8px;
+}
+.founder-detail-card .founder-lux-label>span{
+  color:#9d753c;
+}
+.founder-detail-card .founder-lux-label>b{
+  color:#3f3428;
+}
+
+/* Remove any leftover visual rule reserved for the deleted facts strip. */
+.founder-signature-facts{
+  display:none!important;
+}
+
+@media(max-width:1320px){
+  .founder-lux-story{
+    padding:38px 34px 36px;
+  }
+  .founder-portrait-placeholder{
+    min-height:420px;
+  }
+}
