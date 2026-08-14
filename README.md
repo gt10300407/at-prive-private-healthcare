@@ -82,3 +82,13 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Rebalanced the two-column grid.
 - Split the long second headline line into a controlled third line.
 - Reduced only this section's headline scale slightly while preserving the overall UI.
+
+
+## V24
+- PRIVATE HEALTH OFFICE headline changed to:
+  - 한 해의 건강을,
+  - 하나의 전담 기준으로.
+- Removed the long Founder Profile narrative.
+- Removed the repeated platform-description block from the Founder section.
+- Rebuilt Founder UI around portrait, identity, verified core competencies, business areas, education and certifications.
+- Core Competencies reorganized into a calmer 3×2 editorial grid.
