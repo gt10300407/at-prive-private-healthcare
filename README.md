@@ -147,3 +147,14 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
   fertility, brain/memory, vision, men's health, recovery/rehab and beauty/wellness with
   concrete, differentiated access descriptions.
 - No CHA / partner hospital name, network count, proprietary treatment name or treatment-effect claim is used.
+
+
+## V30 - Luxury Clinical Storytelling
+
+- Added a new `PRIVATE HEALTH INSIGHT` / program-specific insight chapter to all 14 detail pages.
+- The structure is inspired by how premium medical institutions explain:
+  why an area matters → what can be reviewed → who it may suit → how the next medical step is connected.
+- Wording, visual system and service framing are original to at PRIVÉ.
+- No CHA/partner institution name, proprietary program name, hospital network number, equipment claim or treatment-effect claim is reused.
+- The visual is an abstract editorial health map rather than an anatomy diagram, so at PRIVÉ remains a luxury healthcare concierge rather than appearing to be a hospital.
+- Added subtle motion only to small nodes; reduced-motion users see a static version.

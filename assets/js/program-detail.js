@@ -26,6 +26,26 @@
       );
     }
 
+
+    if(p.insight?.nodes?.length){
+      const nodes=p.insight.nodes.slice(0,5);
+      deep+=section(
+        p.insight.eyebrow || 'PRIVATE HEALTH INSIGHT',
+        p.insight.title || '고객의 건강 목적을 더 정교하게 이해합니다.',
+        `<div class="insight-editorial">
+          <div class="insight-copy">
+            <p>${esc(p.insight.copy||'')}</p>
+            <span class="insight-note">의학적 검사·진단·치료의 필요성과 적용 여부는 해당 의료기관과 담당 의료진의 판단에 따라 결정됩니다.</span>
+          </div>
+          <div class="insight-orbit" aria-label="${esc(p.insight.center||'PRIVATE HEALTH MAP')}">
+            <div class="insight-core"><small>at PRIVÉ</small><strong>${esc(p.insight.center||'PRIVATE HEALTH MAP')}</strong></div>
+            ${nodes.map((x,i)=>`<div class="insight-node insight-node-${i+1}"><i></i><strong>${esc(x[0])}</strong><span>${esc(x[1])}</span></div>`).join('')}
+          </div>
+        </div>`,
+        'deep-insight-section'
+      );
+    }
+
     if(p.private_access?.length){
       deep+=section(
         'PRIVATE ACCESS',
