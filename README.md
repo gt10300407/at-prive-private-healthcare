@@ -236,16 +236,8 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Added a warm translucent ivory caption plate attached to the portrait.
 - Founder content, competencies, education and certifications are unchanged.
 
-
-## MK1 R7 — Founder Compact Height
-- Reduced Founder section vertical footprint by roughly 15–20% on desktop.
-- Portrait block reduced from the oversized R6 height to a tighter editorial proportion.
-- Core Competencies and lower Business / Education / Certifications panels were vertically compressed without removing content.
-- Forced the Founder → Consultation transition to remain flush and set the scroll-shell background to ivory so no dark strip can appear between light chapters.
-
-
-## MK1 R8 — Founder Vertical Balance
-- Removed the forced `100svh` behavior from the Founder section.
-- Reduced the top/bottom empty bands so the section height follows its actual content.
-- Preserved all Founder information and the R7 composition.
-- Tightened only the vertical rhythm and lower credential-card height.
+## MK1 R9 — Founder Balanced Viewport
+- Reverted the over-compression introduced in R7/R8.
+- Restored R6-like proportions for portrait, typography, competencies and credential folio.
+- Founder remains a full desktop chapter (`100svh`) so the Consultation section does not visually leak into the same viewport.
+- Height is controlled mainly through outer spacing and moderate panel sizing, not by squeezing text and cards.
