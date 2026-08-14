@@ -188,3 +188,16 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 ### Next milestone
 - MK2: desktop content/editorial completion, service clarity, copy de-duplication, detail-page prioritization, visual rhythm and final QA.
 - Mobile work starts only after MK2 desktop is approved.
+
+
+## MK1 R2 — Founder content restoration + line rhythm fix
+
+- `SIGNATURE JOURNEYS` headline now uses the full section width so the desktop sentence does not break awkwardly.
+- No hard `<br>` was introduced.
+- Restored the complete Founder reference content:
+  - 6 Core Competencies
+  - 5 Business Areas
+  - 2 Education items
+  - 9 Selected Certifications
+- Founder content is reorganized into a premium editorial profile, but no approved reference item is intentionally removed.
+- MK1 remains the desktop baseline; this is a corrective MK1 revision, not MK2.
