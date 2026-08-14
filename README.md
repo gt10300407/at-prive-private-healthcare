@@ -116,3 +116,10 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - 작업 후 1920px / 1440px / 1280px / 모바일 화면에서 제목 끝에 1~3글자만 떨어진 줄이 없는지 확인한다.
 - 줄바꿈이 애매하면 강제로 나누지 않는 쪽을 우선한다.
 - 강제 줄바꿈을 선호하지 않는다. 특별한 이유가 없다면 `<br>`을 사용하지 말고, 한 단어나 조사만 다음 줄에 남는 경우 반드시 레이아웃을 수정한다.
+
+
+## V27
+- Fixed THE at PRIVÉ STANDARD section being visually pinned to the top.
+- Cause: `.standard-layout` changes `.section-shell` from flex to grid, so `justify-content:center` no longer vertically centered the content.
+- Added grid `align-content:center` / `align-items:center`.
+- Removed forced title-line spans from the Standard headline; wrapping is now natural.

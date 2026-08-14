@@ -967,3 +967,43 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
     text-wrap:pretty;
   }
 }
+
+
+/* ================================================================
+   V27 — THE at PRIVÉ STANDARD vertical composition
+   Grid was overriding .section-shell's flex centering.
+   ================================================================ */
+.standard-layout{
+  align-content:center;
+  align-items:center;
+  min-height:100svh;
+}
+
+.standard-intro{
+  align-self:center;
+  min-width:0;
+}
+
+.standard-intro h2{
+  max-width:620px;
+  word-break:keep-all;
+  text-wrap:balance;
+  white-space:normal;
+}
+
+.standard-grid{
+  align-self:center;
+}
+
+@media(max-width:1280px){
+  .standard-layout{
+    align-content:center;
+  }
+}
+
+@media(max-width:760px){
+  .standard-layout{
+    align-content:start;
+    align-items:stretch;
+  }
+}
