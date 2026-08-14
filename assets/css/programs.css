@@ -37,3 +37,156 @@
 .closing-notice{width:min(1420px,89vw);margin:0 auto 120px;padding:62px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw}.closing-notice>p{margin:0;padding:24px 28px;border:1px solid var(--line);background:#fbf8f1;color:#71695e;font-size:13.5px;line-height:1.9;word-break:keep-all}
 @media(max-width:980px){.deep-section,.closing-notice{grid-template-columns:1fr;gap:34px}.detail-columns-lux{grid-template-columns:1fr}.tier-editorial{grid-template-columns:1fr 1fr}.phase-editorial{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.luxury-detail-hero{min-height:62svh}.luxury-detail-hero h1{font-size:40px}.detail-body-lux{padding:64px 0 72px}.deep-section{padding:64px 0}.deep-section-head h2,.closing-notice h2{font-size:32px}.deep-lead{font-size:16px}.phase-editorial,.tier-editorial,.field-index,.journey-index,.deliverable-grid{grid-template-columns:1fr}.phase-editorial article{min-height:auto}.field-index>div:nth-child(n),.journey-index>div:nth-child(n){border-right:0;padding-left:0;padding-right:0}.deliverable-grid div:nth-child(odd){border-right:0}.closing-notice{margin-bottom:80px}.numbered-editorial li{grid-template-columns:52px 1fr}}
+
+/* ================================================================
+   V16 — Unified detail depth + restrained luxury color system
+   ================================================================ */
+.program-detail-page{
+  --detail-ink:#17130f;
+  --detail-espresso:#17140f;
+  --detail-espresso-2:#211b13;
+  --detail-ivory:#f4efe5;
+  --detail-pearl:#faf7f0;
+  --detail-sand:#eee5d6;
+  --detail-champagne:#b9955d;
+  --detail-champagne-light:#d8c5a0;
+  --detail-muted:#6b6257;
+  --detail-line:rgba(66,55,39,.17);
+  background:var(--detail-ivory);
+}
+.program-detail-page .sub-header{
+  background:rgba(247,243,235,.95);
+  border-bottom-color:rgba(72,60,43,.13);
+}
+.luxury-detail-hero{
+  background:
+    radial-gradient(circle at 78% 38%,rgba(191,156,96,.24),transparent 30%),
+    radial-gradient(circle at 15% 78%,rgba(116,90,49,.10),transparent 32%),
+    linear-gradient(135deg,#0c0b09 0%,#1c1710 55%,#0d0c09 100%);
+}
+.luxury-detail-hero .type,.luxury-detail-hero .detail-en{color:var(--detail-champagne-light)!important}
+.detail-body-lux{background:var(--detail-ivory)}
+.detail-intro-lux .gold,.luxury-audience h3{color:#92703a}
+.detail-intro-lux>p:last-of-type{color:#655c51}
+.luxury-audience{border-top-color:rgba(92,72,44,.22)}
+.luxury-audience li{color:#5d554b;border-bottom-color:rgba(92,72,44,.18)}
+
+/* Deep sections share one visual system; only the journey section becomes dark. */
+.deep-content{background:var(--detail-ivory)}
+.deep-section{
+  width:min(1420px,89vw);
+  padding:94px 0;
+  border-top-color:var(--detail-line);
+}
+.deep-section-head p{color:#98743c}
+.deep-section-head h2{color:var(--detail-ink)}
+.deep-lead{color:#5c5449}
+
+.deep-intro-section{
+  background:transparent;
+}
+.deep-service-section{
+  box-shadow:0 0 0 100vmax var(--detail-pearl);
+  clip-path:inset(0 -100vmax);
+}
+.deep-fields-section,
+.deep-tier-section,
+.deep-specialized-section,
+.deliverables-section{
+  background:transparent;
+}
+.deep-fields-section{
+  box-shadow:0 0 0 100vmax rgba(235,226,211,.54);
+  clip-path:inset(0 -100vmax);
+}
+
+.numbered-editorial,
+.field-index,.journey-index,.tier-editorial,.deliverable-grid,
+.phase-editorial{border-color:var(--detail-line)}
+.numbered-editorial li,
+.field-index>div,.journey-index>div,
+.tier-editorial article,.deliverable-grid div,
+.phase-editorial article{border-color:var(--detail-line)}
+.numbered-editorial span,.field-index span,.journey-index span,
+.phase-editorial article>span,.tier-editorial small{color:#9c773e}
+.numbered-editorial p,.field-index strong,.journey-index strong,
+.deliverable-grid div{color:#514a40}
+
+/* One dark editorial chapter per detail page: gives hierarchy without introducing extra colors. */
+.deep-journey-section{
+  box-shadow:0 0 0 100vmax var(--detail-espresso);
+  clip-path:inset(0 -100vmax);
+  border-top-color:rgba(216,197,160,.18);
+  color:#f8f2e8;
+}
+.deep-journey-section .deep-section-head p{color:var(--detail-champagne-light)}
+.deep-journey-section .deep-section-head h2{color:#f7f1e7}
+.deep-journey-section .phase-editorial{
+  border-color:rgba(216,197,160,.20);
+}
+.deep-journey-section .phase-editorial article{
+  background:rgba(255,255,255,.018);
+  border-color:rgba(216,197,160,.18);
+}
+.deep-journey-section .phase-editorial article>span,
+.deep-journey-section .phase-editorial small{color:var(--detail-champagne-light)}
+.deep-journey-section .phase-editorial h3{color:#fffaf2}
+.deep-journey-section .phase-items li{color:rgba(255,250,242,.66)}
+.deep-journey-section .phase-items li:before{color:rgba(216,197,160,.55)}
+
+/* Signature levels: warm, quiet and more like a private banking product sheet. */
+.deep-tier-section{
+  box-shadow:0 0 0 100vmax #f1e8da;
+  clip-path:inset(0 -100vmax);
+}
+.deep-tier-section .tier-editorial article{background:rgba(255,255,255,.28)}
+.deep-tier-section .tier-editorial h3{color:#3b342c}
+.deep-tier-section .tier-editorial p{color:#766b5d}
+
+/* Medical notice: compact dark signature instead of a stretched beige warning box. */
+.closing-notice{
+  width:min(1420px,89vw);
+  margin:0 auto 104px;
+  padding:42px 46px;
+  border:1px solid rgba(185,149,92,.28);
+  background:
+    radial-gradient(circle at 84% 20%,rgba(185,149,92,.10),transparent 32%),
+    var(--detail-espresso);
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:6vw;
+  align-items:center;
+}
+.closing-notice>div>p{color:var(--detail-champagne-light);margin-bottom:11px}
+.closing-notice h2{
+  max-width:500px;
+  color:#fffaf2;
+  font-size:clamp(27px,2.25vw,38px);
+  line-height:1.34;
+}
+.closing-notice>p{
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:rgba(255,250,242,.64);
+  font-size:13.5px;
+  line-height:1.95;
+}
+
+/* Keep content density intentional on wide screens. */
+.detail-columns-lux{align-items:start}
+.detail-intro-lux{max-width:690px}
+.luxury-audience li{min-height:72px;display:flex;align-items:center}
+.deep-section-body{align-self:start}
+
+@media(max-width:980px){
+  .closing-notice{grid-template-columns:1fr;gap:22px;padding:38px}
+  .deep-section{padding:76px 0}
+}
+@media(max-width:620px){
+  .deep-section{padding:58px 0}
+  .closing-notice{width:88vw;margin-bottom:72px;padding:30px 24px}
+  .closing-notice h2{font-size:28px}
+  .deep-journey-section .phase-editorial{grid-template-columns:1fr}
+}
