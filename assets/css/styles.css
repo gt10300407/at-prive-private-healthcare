@@ -2109,3 +2109,59 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
     min-height:180px;
   }
 }
+
+
+/* ================================================================
+   MK1 R8 — Founder vertical balance
+   Remove the oversized top/bottom breathing room while preserving content.
+   ================================================================ */
+
+#founder{
+  min-height:auto;
+  padding:0;
+}
+
+/* Stop forcing a full viewport when the content itself is shorter. */
+#founder .founder-r5-shell{
+  min-height:auto;
+  height:auto;
+  padding-top:34px;
+  padding-bottom:34px;
+  justify-content:flex-start;
+}
+
+/* Pull the composition closer to the section boundaries. */
+.founder-r5-stage{
+  margin-top:0;
+}
+
+.founder-r5-folio{
+  margin-top:18px;
+}
+
+/* Slightly tighten bottom cards so the final edge lands naturally. */
+.founder-r5-folio-card{
+  min-height:178px;
+  padding-top:20px;
+  padding-bottom:16px;
+}
+
+.founder-r5-folio-card li{
+  margin:5px 0;
+  line-height:1.38;
+}
+
+/* Keep a clean, deliberate bottom termination. */
+#founder .founder-r5-shell:after{
+  content:"";
+  display:block;
+  height:0;
+  margin:0;
+}
+
+/* Desktop: visually center the composition in normal document flow, not viewport flow. */
+@media(min-width:1181px){
+  #founder .section-shell{
+    min-height:0;
+  }
+}
