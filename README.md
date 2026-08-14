@@ -92,3 +92,9 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Removed the repeated platform-description block from the Founder section.
 - Rebuilt Founder UI around portrait, identity, verified core competencies, business areas, education and certifications.
 - Core Competencies reorganized into a calmer 3×2 editorial grid.
+
+
+## V25
+- Removed forced `<br>` line breaks from Founder competency labels.
+- Founder Experience headline stays on one line on desktop whenever width permits.
+- Competency text now wraps naturally only when the card width requires it.

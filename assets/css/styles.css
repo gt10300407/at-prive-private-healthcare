@@ -874,3 +874,43 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
     min-height:132px;
   }
 }
+
+
+/* ================================================================
+   V25 — Founder typography: no forced line breaks
+   ================================================================ */
+.founder-compact-heading h3{
+  max-width:none;
+  white-space:nowrap;
+  font-size:clamp(31px,2.05vw,40px);
+  line-height:1.12;
+  letter-spacing:-.024em;
+}
+
+.competency-icons strong{
+  max-width:92%;
+  margin-inline:auto;
+  white-space:normal;
+  text-wrap:balance;
+  word-break:keep-all;
+  line-height:1.34;
+}
+
+/* Let the browser wrap only when card width genuinely requires it. */
+.competency-icons article{
+  overflow:hidden;
+}
+
+@media(max-width:1280px){
+  .founder-compact-heading h3{
+    white-space:normal;
+    font-size:34px;
+  }
+}
+
+@media(max-width:760px){
+  .founder-compact-heading h3{
+    white-space:normal;
+    font-size:30px;
+  }
+}
