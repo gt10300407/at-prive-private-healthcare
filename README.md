@@ -123,3 +123,9 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Cause: `.standard-layout` changes `.section-shell` from flex to grid, so `justify-content:center` no longer vertically centered the content.
 - Added grid `align-content:center` / `align-items:center`.
 - Removed forced title-line spans from the Standard headline; wrapping is now natural.
+
+
+## V28
+- Fixed the `ALL / 전체 의료 접근 분야` English category list wrapping awkwardly.
+- Desktop keeps `Brain · Vision · Men · Recovery · Beauty · Wellness` on one line when space permits.
+- Smaller screens return to natural Korean-style wrapping rules.

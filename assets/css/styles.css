@@ -1007,3 +1007,22 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
     align-items:stretch;
   }
 }
+
+
+/* ================================================================
+   V28 — Access ALL row typography
+   Keep category labels on one line when desktop width allows it.
+   ================================================================ */
+.access-list .access-all-fields{
+  font-size:13px;
+  letter-spacing:-.015em;
+  white-space:nowrap;
+  word-break:normal;
+}
+
+@media(max-width:1280px){
+  .access-list .access-all-fields{
+    white-space:normal;
+    word-break:keep-all;
+  }
+}
