@@ -75,3 +75,10 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Fixed malformed HTML structure at the bottom of index.html.
 - `#contact` section is no longer nested inside `#founder`.
 - Restored founder detail blocks and separated consultation section back into its own full-width chapter.
+
+
+## V23 hotfix
+- Fixed overlap between the CURATED MEDICAL ACCESS headline and the right-hand program list.
+- Rebalanced the two-column grid.
+- Split the long second headline line into a controlled third line.
+- Reduced only this section's headline scale slightly while preserving the overall UI.

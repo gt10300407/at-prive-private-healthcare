@@ -664,3 +664,57 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .global-journey-grid article{min-height:auto;padding:28px 22px}
   .global-journey-actions{flex-direction:column;gap:14px}
 }
+
+
+/* ================================================================
+   V23 — Curated Medical Access overlap hotfix
+   Keep the editorial scale, but contain the headline in its column.
+   ================================================================ */
+.access-layout{
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:4.5vw;
+}
+.access-intro{
+  min-width:0;
+  padding-right:1.2vw;
+}
+.access-intro .access-heading{
+  width:100%;
+  max-width:720px;
+  font-size:clamp(46px,3vw,54px);
+  line-height:1.22;
+  letter-spacing:-.044em;
+}
+.access-intro .access-heading .title-line{
+  white-space:nowrap;
+}
+.access-list{
+  min-width:0;
+}
+
+@media(max-width:1450px){
+  .access-layout{
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    gap:4vw;
+  }
+  .access-intro .access-heading{
+    font-size:clamp(43px,3.2vw,50px);
+  }
+}
+@media(max-width:1180px){
+  .access-layout{
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+    gap:3.5vw;
+  }
+  .access-intro .access-heading .title-line{
+    white-space:normal;
+  }
+}
+@media(max-width:760px){
+  .access-layout{display:block}
+  .access-intro{padding-right:0}
+  .access-intro .access-heading{
+    max-width:none;
+    font-size:41px;
+  }
+}
