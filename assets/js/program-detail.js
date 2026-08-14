@@ -26,6 +26,15 @@
       );
     }
 
+    if(p.private_access?.length){
+      deep+=section(
+        'PRIVATE ACCESS',
+        isMedical?'고객 한 사람을 위해, 필요한 의료 접근을 정교하게 구성합니다.':isOffice?'전담 기준으로 건강의 흐름을 이어갑니다.':isGlobal?'한국 의료 이용의 전후를 하나의 프라이빗 여정으로 연결합니다.':'필요한 접근을 하나의 흐름으로 구성합니다.',
+        `<div class="private-access-grid">${p.private_access.map((x,i)=>`<article><span>${String(i+1).padStart(2,'0')}</span><small>${esc(x.title)}</small><h3>${esc(x.ko)}</h3><p>${esc(x.copy)}</p></article>`).join('')}</div>`,
+        'deep-private-access-section'
+      );
+    }
+
     const scope=(p.service_scope?.length?p.service_scope:p.steps)||[];
     if(scope.length){
       deep+=section(
@@ -78,11 +87,11 @@
 
     const statement=p.statement||p.summary;
     const axisLabel=isOffice?'PRIVATE HEALTH OFFICE':isGlobal?'GLOBAL MEDICAL JOURNEY':'CURATED MEDICAL ACCESS';
-    const introCopy=isMedical
-      ? 'at PRIVÉ가 진단이나 치료방법을 결정하지 않습니다. 고객의 목적과 기존 의료자료를 정리한 뒤 관련 전문 분야와 의료기관의 상담 가능 범위를 확인하고, 의료진의 판단이 필요한 단계에 맞춰 접근을 연결합니다.'
+    const introCopy=p.positioning || (isMedical
+      ? '고객의 목적과 기존 의료자료를 정리한 뒤 관련 전문 분야와 의료기관의 상담 가능 범위를 확인하고, 의료진의 판단이 필요한 단계에 맞춰 접근을 연결합니다.'
       : isOffice
         ? '연간 건강관리 캘린더, 검사결과와 재검 일정, 전문의 상담과 가족의 의료 일정을 하나의 전담 체계로 이어가는 장기 관리 서비스입니다.'
-        : '해외 고객이 한국 의료를 이용할 때 필요한 의료 일정과 국제 컨시어지 범위를 입국 전·체류 중·귀국 후로 구분해 조율합니다.';
+        : '해외 고객이 한국 의료를 이용할 때 필요한 의료 일정과 국제 컨시어지 범위를 입국 전·체류 중·귀국 후로 구분해 조율합니다.');
 
     root.innerHTML=`
       <section class="detail-hero luxury-detail-hero">

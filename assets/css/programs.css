@@ -233,3 +233,64 @@
   .program-tabs{display:grid;grid-template-columns:1fr 1fr}
   .program-tabs button{min-width:0;border-bottom:1px solid rgba(141,109,56,.18)}
 }
+
+
+/* ================================================================
+   V29 — Premium content depth / PRIVATE ACCESS
+   Content enrichment only: preserve the existing desktop visual system.
+   ================================================================ */
+.deep-private-access-section{
+  background:#f1e9dc;
+  box-shadow:0 0 0 100vmax #f1e9dc;
+  clip-path:inset(0 -100vmax);
+}
+.private-access-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--detail-line);
+  border-left:1px solid var(--detail-line);
+}
+.private-access-grid article{
+  min-height:300px;
+  padding:30px 28px 28px;
+  border-right:1px solid var(--detail-line);
+  border-bottom:1px solid var(--detail-line);
+  background:rgba(255,255,255,.18);
+}
+.private-access-grid article>span{
+  font-family:var(--serif);
+  font-size:18px;
+  color:#9c773e;
+}
+.private-access-grid small{
+  display:block;
+  margin-top:42px;
+  color:#98743c;
+  font-size:10px;
+  letter-spacing:.14em;
+}
+.private-access-grid h3{
+  margin:8px 0 15px;
+  color:#2f2922;
+  font-size:22px;
+  line-height:1.38;
+  font-weight:500;
+  word-break:keep-all;
+  text-wrap:balance;
+}
+.private-access-grid p{
+  margin:0;
+  color:#6a6053;
+  font-size:13.5px;
+  line-height:1.78;
+  word-break:keep-all;
+}
+.detail-intro-lux>p:last-of-type{
+  max-width:710px;
+  font-size:16px;
+  line-height:1.95;
+}
+@media(max-width:980px){
+  .private-access-grid{grid-template-columns:1fr}
+  .private-access-grid article{min-height:auto}
+}

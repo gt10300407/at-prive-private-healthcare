@@ -129,3 +129,21 @@ V13: private-services header/layout + concierge public-copy/line-break fix.
 - Fixed the `ALL / 전체 의료 접근 분야` English category list wrapping awkwardly.
 - Desktop keeps `Brain · Vision · Men · Recovery · Beauty · Wellness` on one line when space permits.
 - Smaller screens return to natural Korean-style wrapping rules.
+
+
+## V29 - Content Depth / Premium Access
+
+### Direction
+- at PRIVÉ does not present a partner hospital's assets as its own.
+- The website now speaks more clearly about what the client can access through at PRIVÉ:
+  curation, specialist access, medical-record preparation, suitability review, continuity and private coordination.
+- Medical diagnosis, treatment decisions and clinical eligibility remain with the relevant medical institution and clinician.
+- Translation / vehicle / accommodation language stays concentrated in GLOBAL MEDICAL JOURNEY instead of being repeated across medical specialties.
+
+### Detail pages
+- Added a program-specific `PRIVATE ACCESS` chapter to all 14 programs.
+- Replaced the generic top description with a program-specific premium positioning statement.
+- Enriched regenerative medicine, cell/immune care, cancer second opinion, women's health,
+  fertility, brain/memory, vision, men's health, recovery/rehab and beauty/wellness with
+  concrete, differentiated access descriptions.
+- No CHA / partner hospital name, network count, proprietary treatment name or treatment-effect claim is used.
