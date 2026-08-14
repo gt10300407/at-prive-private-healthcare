@@ -57,12 +57,26 @@ if (!svg.empty()) {
     return `M ${a.x},${a.y} Q ${mx + nx * bend},${my + ny * bend} ${b.x},${b.y}`;
   }
 
-  const routes = routeG.selectAll('path')
+  const routeSets = routeG.selectAll('g.ga-route-set')
     .data(dest)
-    .join('path')
+    .join('g')
+    .attr('class', 'ga-route-set');
+
+  const routeGlow = routeSets.append('path')
+    .attr('class', 'ga-route-glow')
+    .attr('d', d => curve(home, d))
+    .attr('pathLength', 100)
+    .attr('opacity', 0)
+    .attr('stroke-dasharray', '100 100')
+    .attr('stroke-dashoffset', 100);
+
+  const routes = routeSets.append('path')
     .attr('class', 'ga-route')
     .attr('d', d => curve(home, d))
-    .attr('opacity', 0);
+    .attr('pathLength', 100)
+    .attr('opacity', 0)
+    .attr('stroke-dasharray', '100 100')
+    .attr('stroke-dashoffset', 100);
 
   const nodes = nodeG.selectAll('g')
     .data(dest)
@@ -95,20 +109,22 @@ if (!svg.empty()) {
 
   const homeBrand = labelG.append('g')
     .attr('class', 'ga-home-lockup')
-    .attr('transform', `translate(${home.x + 16},${home.y - 19})`)
+    .attr('transform', `translate(${home.x - 18},${home.y - 24})`)
     .attr('opacity', 0);
 
   homeBrand.append('text')
     .attr('class', 'ga-home-brand')
     .attr('x', 0)
     .attr('y', 0)
+    .attr('text-anchor', 'end')
     .text('at PRIVÉ');
 
   homeBrand.append('text')
     .attr('class', 'ga-home-country')
-    .attr('x', 1)
-    .attr('y', 16)
-    .text('KOREA · PRIVATE ACCESS');
+    .attr('x', 0)
+    .attr('y', 15)
+    .attr('text-anchor', 'end')
+    .text('PRIVATE ACCESS · KOREA');
 
   rings
     .attr('transform', `translate(${home.x},${home.y})`)
@@ -117,11 +133,20 @@ if (!svg.empty()) {
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
   function resetVisuals() {
-    routes.interrupt().attr('opacity', 0).attr('stroke-dasharray', null).attr('stroke-dashoffset', null);
+    routeGlow.interrupt()
+      .attr('opacity', 0)
+      .attr('stroke-dasharray', '100 100')
+      .attr('stroke-dashoffset', 100);
+
+    routes.interrupt()
+      .attr('opacity', 0)
+      .attr('stroke-dasharray', '100 100')
+      .attr('stroke-dashoffset', 100);
+
     nodes.interrupt().attr('opacity', 0);
     labels.interrupt().attr('opacity', 0);
     homeNode.interrupt().attr('opacity', 0);
-    homeBrand.interrupt().attr('opacity', 0).attr('transform', `translate(${home.x + 16},${home.y - 13})`);
+    homeBrand.interrupt().attr('opacity', 0).attr('transform', `translate(${home.x - 18},${home.y - 18})`);
     rings.interrupt().attr('opacity', 0);
     rings.selectAll('circle').interrupt().attr('opacity', 0);
   }
@@ -134,10 +159,10 @@ if (!svg.empty()) {
 
     homeBrand
       .attr('opacity', 0)
-      .attr('transform', `translate(${home.x + 16},${home.y - 13})`)
+      .attr('transform', `translate(${home.x - 18},${home.y - 18})`)
       .transition().duration(650).ease(d3.easeCubicOut)
       .attr('opacity', 1)
-      .attr('transform', `translate(${home.x + 16},${home.y - 19})`);
+      .attr('transform', `translate(${home.x - 18},${home.y - 24})`);
 
     rings.attr('opacity', 1);
     rings.selectAll('circle').each(function(_, i) {
@@ -154,38 +179,50 @@ if (!svg.empty()) {
   }
 
   function drawAllRoutes() {
-    routes.each(function() {
-      const path = d3.select(this);
-      const len = this.getTotalLength();
-      path
-        .interrupt()
-        .attr('opacity', 0.82)
-        .attr('stroke-dasharray', `${len} ${len}`)
-        .attr('stroke-dashoffset', len)
-        .transition()
-        .duration(2300)
-        .ease(d3.easeCubicInOut)
-        .attr('stroke-dashoffset', 0)
-        .on('end', () => path.attr('stroke-dasharray', null).attr('stroke-dashoffset', null));
-    });
+    // Keep stroke-dasharray constant for the whole animation.
+    // Only stroke-dashoffset moves, preventing the one-frame gap/jump
+    // that can occur when switching from dashed to normal stroke rendering.
+    routeGlow
+      .interrupt()
+      .attr('opacity', 0.22)
+      .attr('stroke-dasharray', '100 100')
+      .attr('stroke-dashoffset', 100)
+      .transition()
+      .duration(2550)
+      .ease(d3.easeCubicInOut)
+      .attr('stroke-dashoffset', 0);
+
+    routes
+      .interrupt()
+      .attr('opacity', 0.86)
+      .attr('stroke-dasharray', '100 100')
+      .attr('stroke-dashoffset', 100)
+      .transition()
+      .duration(2550)
+      .ease(d3.easeCubicInOut)
+      .attr('stroke-dashoffset', 0);
 
     nodes
-      .transition().delay(1420).duration(620).ease(d3.easeCubicOut)
+      .transition().delay(1820).duration(520).ease(d3.easeCubicOut)
       .attr('opacity', 1);
 
     labels
-      .transition().delay(1500).duration(720).ease(d3.easeCubicOut)
-      .attr('opacity', 0.76);
+      .transition().delay(1870).duration(620).ease(d3.easeCubicOut)
+      .attr('opacity', 0.72);
 
     nodes.select('.ga-node-ring')
-      .transition().delay(1760).duration(300).attr('r', 8.2)
-      .transition().duration(520).attr('r', 5.2);
+      .transition().delay(2050).duration(260).attr('r', 7.4)
+      .transition().duration(500).attr('r', 5.2);
   }
 
   function settleNetwork() {
+    routeGlow
+      .transition().duration(820).ease(d3.easeCubicOut)
+      .attr('opacity', 0.07);
+
     routes
       .transition().duration(820).ease(d3.easeCubicOut)
-      .attr('opacity', 0.34);
+      .attr('opacity', 0.38);
 
     labels
       .transition().duration(820)
@@ -221,7 +258,8 @@ if (!svg.empty()) {
     await wait(3300);
 
     // Quiet close: the network recedes, at PRIVÉ remains as the visual anchor.
-    routes.transition().duration(900).attr('opacity', 0.10);
+    routeGlow.transition().duration(900).attr('opacity', 0.025);
+    routes.transition().duration(900).attr('opacity', 0.12);
     labels.transition().duration(900).attr('opacity', 0.18);
     nodes.transition().duration(900).attr('opacity', 0.28);
     await wait(1450);
@@ -232,7 +270,8 @@ if (!svg.empty()) {
   if (matchMedia('(prefers-reduced-motion:reduce)').matches) {
     homeNode.attr('opacity', 1);
     homeBrand.attr('opacity', 1);
-    routes.attr('opacity', 0.28);
+    routeGlow.attr('opacity', 0.05).attr('stroke-dashoffset', 0);
+    routes.attr('opacity', 0.32).attr('stroke-dashoffset', 0);
     nodes.attr('opacity', 0.72);
     labels.attr('opacity', 0.58);
   } else {

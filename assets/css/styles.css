@@ -500,3 +500,64 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .ga-home-brand{font-size:18px}
   .ga-home-country{font-size:7px}
 }
+
+
+/* ================================================================
+   V19 — route continuity fix
+   Stable dual-layer beam: no dash-array teardown, no visual gap.
+   ================================================================ */
+.hero-map-visual #globalAccessMap{
+  width:116%;
+  transform:translateX(1%) translateY(2%);
+}
+
+.ga-route-glow{
+  fill:none;
+  stroke:rgba(220,205,174,.22);
+  stroke-width:3.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+  filter:url(#globalSoftGlow);
+}
+
+.ga-route{
+  fill:none;
+  stroke:rgba(239,232,218,.72);
+  stroke-width:.88;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+  filter:none;
+}
+
+.ga-home-brand{
+  font-size:18px;
+  letter-spacing:.008em;
+}
+
+.ga-home-country{
+  font-size:7.2px;
+  letter-spacing:.14em;
+  fill:rgba(198,178,141,.72);
+}
+
+.ga-label{
+  font-size:9.5px;
+  letter-spacing:.055em;
+  fill:rgba(226,224,218,.55);
+}
+
+/* Reduce the bright wash around the Asian side so the route stays visible
+   continuously from the at PRIVÉ core. */
+.hero-map-shell:before{
+  background:
+    radial-gradient(circle at 76% 40%,rgba(222,205,170,.035),transparent 30%),
+    linear-gradient(90deg,rgba(0,0,0,.10),transparent 50%,rgba(0,0,0,.01));
+}
+
+@media(max-width:760px){
+  .ga-home-brand{font-size:15px}
+  .ga-home-country{font-size:6.2px}
+  .ga-label{font-size:8px}
+}
