@@ -190,3 +190,38 @@
   .closing-notice h2{font-size:28px}
   .deep-journey-section .phase-editorial{grid-template-columns:1fr}
 }
+
+/* ================================================================
+   V17 — Detail full-bleed background / footer-gap fix
+   Fixes the V16 shadow-only full-bleed bug that left the centered
+   content surface ivory while only the outside gutters were tinted.
+   ================================================================ */
+.program-detail-page #programDetail{
+  background:var(--detail-ivory,#f4efe5);
+  padding-bottom:104px;
+  overflow-x:hidden;
+}
+
+/* Match each constrained section's own background to its full-bleed shadow. */
+.deep-service-section{
+  background:var(--detail-pearl);
+}
+.deep-fields-section{
+  background:rgba(235,226,211,.54);
+}
+.deep-journey-section{
+  background:var(--detail-espresso);
+}
+.deep-tier-section{
+  background:#f1e8da;
+}
+
+/* The final margin used to collapse beyond <main>, exposing html's dark root. */
+.closing-notice{
+  margin:0 auto;
+}
+
+@media(max-width:620px){
+  .program-detail-page #programDetail{padding-bottom:72px}
+  .closing-notice{margin-bottom:0}
+}
