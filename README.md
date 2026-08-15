@@ -258,3 +258,9 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Moved `한수연 / 대표이사 · Founder` below the image as an attached caption plate, still inside the same portrait composition.
 - Added `object-fit: cover` styling so a real portrait can replace the placeholder without layout changes.
 - No Founder facts, education, certifications, consultation link, or other site content were removed.
+
+
+## MK1 R12 — Founder Bottom Trim
+- Changed only the empty space below the Founder credentials folio.
+- No portrait ratio, typography, card height, content, column width, or Google Form link was changed.
+- Founder section viewport tail reduced by 34px and bottom padding reduced to 6px.

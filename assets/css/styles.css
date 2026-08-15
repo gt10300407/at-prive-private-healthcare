@@ -2232,3 +2232,24 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   }
   .founder-r5-main{padding-left:30px}
 }
+
+
+/* ================================================================
+   MK1 R12 — Founder bottom trim only
+   Do not alter portrait, typography, cards, columns, or content.
+   ================================================================ */
+
+/* Remove only the small extra tail under the Founder folio. */
+#founder{
+  min-height:calc(100svh - 34px) !important;
+}
+
+#founder .founder-r5-shell{
+  min-height:calc(100svh - 34px) !important;
+  padding-bottom:6px !important;
+}
+
+/* Keep the folio itself exactly where it is; only shorten the section ending. */
+#founder .founder-r5-folio{
+  margin-bottom:0 !important;
+}
