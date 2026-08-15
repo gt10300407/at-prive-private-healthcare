@@ -2253,3 +2253,52 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 #founder .founder-r5-folio{
   margin-bottom:0 !important;
 }
+
+
+/* ================================================================
+   MK1 R13 — Founder snap stability
+   Fix only the inconsistent Founder resting position.
+   Cause: R12 made the chapter shorter than the global mandatory
+   scroll-snap viewport while its content was still slightly taller,
+   allowing two different resting positions depending on scroll direction.
+   ================================================================ */
+
+/* Restore one stable snap-sized chapter. */
+#founder{
+  min-height:100svh !important;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+
+/* Keep the same visual sizes. Only reclaim invisible spacing so all
+   Founder content fits inside the snap viewport on normal desktop heights. */
+#founder .founder-r5-shell{
+  min-height:100svh !important;
+  padding-top:calc(var(--header) + 4px) !important;
+  padding-bottom:6px !important;
+  justify-content:center;
+}
+
+#founder .founder-r5-portrait{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+}
+
+#founder .founder-r5-folio{
+  margin-top:10px !important;
+  margin-bottom:0 !important;
+}
+
+/* On short desktop viewports, don't force an oversized Founder chapter
+   into mandatory snapping; let it scroll naturally instead. */
+@media (min-width:1181px) and (max-height:819px){
+  #founder{
+    min-height:auto !important;
+    scroll-snap-align:none;
+    scroll-snap-stop:normal;
+    overflow:visible;
+  }
+  #founder .founder-r5-shell{
+    min-height:auto !important;
+  }
+}

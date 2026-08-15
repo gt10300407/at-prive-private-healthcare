@@ -264,3 +264,12 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Changed only the empty space below the Founder credentials folio.
 - No portrait ratio, typography, card height, content, column width, or Google Form link was changed.
 - Founder section viewport tail reduced by 34px and bottom padding reduced to 6px.
+
+
+## MK1 R13 — Founder Snap Stable
+- Fixed the Founder section showing a different resting position depending on scroll direction.
+- Root cause was R12 shortening the Founder chapter below the global mandatory scroll-snap viewport while the internal content remained slightly taller.
+- Restored Founder to one 100svh snap chapter.
+- Did not change portrait ratio, typography, content, card sizes, column widths, credentials, or Google Form connection.
+- Reclaimed only invisible vertical spacing (top/portrait gap/folio gap) so the normal desktop composition fits within one snap viewport.
+- Short desktop heights fall back to natural scrolling for Founder rather than producing a second snap position.
