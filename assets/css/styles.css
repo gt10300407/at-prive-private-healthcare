@@ -2111,3 +2111,124 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
 .consultation-card-points{border-top:1px solid rgba(141,109,56,.18)}.consultation-card-points>div{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(141,109,56,.16)}.consultation-card-points span{font-family:var(--serif);font-size:14px;color:var(--gold3)}.consultation-card-points p{margin:0;color:#6e6457;font-size:12.5px;line-height:1.6;word-break:keep-all}
 .consultation-external{width:100%;margin-top:24px;justify-content:space-between}.consultation-external i{font-style:normal;font-size:20px;color:var(--gold3)}.consultation-card-note{margin:12px 0 0;color:#8a8071;font-size:10.5px;line-height:1.55}
 @media(max-width:760px){.consultation-card{margin-top:30px;padding:24px}.consultation-card-top strong{font-size:20px}.consultation-card-lead{font-size:14px}.consultation-card-points>div{grid-template-columns:34px 1fr}.consultation-external{min-width:0}}
+
+
+/* ================================================================
+   MK1 R11 — Founder portrait ratio correction
+   Real portrait-ready 4:5 composition; preserve all Founder content.
+   ================================================================ */
+
+/* Give the portrait a true editorial portrait column rather than a landscape card. */
+.founder-r5-stage{
+  grid-template-columns:minmax(360px,30%) minmax(0,70%);
+}
+.founder-r5-stage:before{
+  left:30%;
+}
+
+.founder-r5-portrait{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:22px 34px 22px 18px;
+}
+
+/* Actual photo area: classic 4:5 executive portrait proportion. */
+.founder-r5-photo{
+  position:relative;
+  width:min(100%,390px);
+  aspect-ratio:4 / 5;
+  min-height:0!important;
+  padding:24px;
+  overflow:hidden;
+  border:1px solid rgba(143,106,50,.30);
+  background:
+    radial-gradient(circle at 72% 20%,rgba(255,255,255,.86),transparent 24%),
+    linear-gradient(145deg,#eee4d6 0%,#f8f3ec 52%,#e3d6c5 100%);
+}
+
+/* Future real portrait can be dropped in without changing the layout. */
+.founder-r5-photo>img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+}
+
+.founder-r5-photo>p{
+  margin:0!important;
+}
+
+/* Identity becomes a caption directly attached to the portrait, not an overlay on the image. */
+.founder-r5-portrait>.founder-r5-nameplate{
+  display:flex!important;
+  width:min(100%,390px);
+  min-height:82px;
+  margin:0;
+  padding:17px 18px 16px;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  border-left:1px solid rgba(143,106,50,.30);
+  border-right:1px solid rgba(143,106,50,.30);
+  border-bottom:1px solid rgba(143,106,50,.30);
+  background:linear-gradient(180deg,rgba(247,241,232,.98),rgba(237,226,210,.98));
+}
+
+.founder-r5-portrait>.founder-r5-nameplate strong{
+  display:block;
+  color:#201b16;
+  font-size:28px;
+  line-height:1;
+  letter-spacing:-.035em;
+}
+.founder-r5-portrait>.founder-r5-nameplate span{
+  display:block;
+  margin-top:7px;
+  color:#6e6356;
+  font-size:10.5px;
+}
+.founder-r5-portrait>.founder-r5-nameplate small{
+  max-width:126px;
+  color:#98713d;
+  font-size:7px;
+  line-height:1.5;
+  letter-spacing:.13em;
+  text-align:right;
+}
+
+/* Disable the old in-photo overlay path from R6/R9. */
+.founder-r5-photo>.founder-r5-nameplate{
+  display:none!important;
+}
+
+/* The right editorial area now owns more horizontal space, improving the overall Founder balance. */
+.founder-r5-main{
+  padding-left:44px;
+}
+
+@media(max-width:1320px){
+  .founder-r5-stage{
+    grid-template-columns:minmax(320px,31%) minmax(0,69%);
+  }
+  .founder-r5-stage:before{left:31%}
+  .founder-r5-photo,
+  .founder-r5-portrait>.founder-r5-nameplate{
+    width:min(100%,350px);
+  }
+}
+
+@media(max-width:1180px){
+  .founder-r5-stage{
+    grid-template-columns:.36fr .64fr;
+  }
+  .founder-r5-stage:before{left:36%}
+  .founder-r5-photo,
+  .founder-r5-portrait>.founder-r5-nameplate{
+    width:100%;
+  }
+  .founder-r5-main{padding-left:30px}
+}

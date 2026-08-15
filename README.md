@@ -250,3 +250,11 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Replaced the old form UI with an at PRIVÉ-styled consultation handoff card.
 - The Google Form opens in a new tab so the at PRIVÉ site visual system remains intact.
 - Direct email and VIP phone contact information remain available in the Contact section.
+
+
+## MK1 R11 — Founder Portrait Ratio
+- Corrected the Founder photo area from a wide card into a true 4:5 vertical executive portrait.
+- Reduced the Founder left column to roughly 30% and gave the editorial profile area more horizontal room.
+- Moved `한수연 / 대표이사 · Founder` below the image as an attached caption plate, still inside the same portrait composition.
+- Added `object-fit: cover` styling so a real portrait can replace the placeholder without layout changes.
+- No Founder facts, education, certifications, consultation link, or other site content were removed.
