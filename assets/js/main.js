@@ -7,7 +7,6 @@
   const toggleFab=()=>fab?.classList.toggle('fab-ready',(scroller?.scrollTop||window.scrollY)>(window.innerHeight*.72));
   scroller?.addEventListener('scroll',toggleFab,{passive:true});window.addEventListener('scroll',toggleFab,{passive:true});toggleFab();
   fab?.addEventListener('click',()=>{panel.classList.add('open');panel.setAttribute('aria-hidden','false')});panelClose?.addEventListener('click',()=>{panel.classList.remove('open');panel.setAttribute('aria-hidden','true')});panel?.querySelector('a')?.addEventListener('click',()=>panel.classList.remove('open'));
-  const form=document.getElementById('privateForm');form?.addEventListener('submit',e=>{e.preventDefault();const d=new FormData(form);const subject=`[at PRIVÉ Private Inquiry] ${d.get('name')||''} / ${d.get('interest')||''}`;const body=`이름 / 기관명: ${d.get('name')||''}\n국가: ${d.get('country')||''}\n연락처: ${d.get('contact')||''}\n관심 분야: ${d.get('interest')||''}\n\n문의 내용:\n${d.get('message')||''}\n\n※ 초기 문의에는 민감한 의료정보를 포함하지 마세요.`;location.href=`mailto:atinc@atinc.co.kr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`});
   // V7 Private Access Atlas — a quiet, curated network rather than radial routes.
   // The globe stays completely fixed. Connections unfold as a regional access chain,
   // beginning at KOREA and moving through real land-based hubs. No moving projectile dots.

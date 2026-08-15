@@ -2099,3 +2099,15 @@ body{font-family:var(--sans);font-weight:400;letter-spacing:-.015em}
   .founder-r5-intro h2{font-size:clamp(32px,2.45vw,44px)}
   .founder-r5-folio-card{min-height:194px}
 }
+
+
+/* ================================================================
+   R10 — Google Form consultation connection
+   ================================================================ */
+.consultation-card{padding:34px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(251,248,241,.98),rgba(241,232,218,.72));box-shadow:0 22px 65px rgba(73,57,33,.08)}
+.consultation-card-top{display:flex;justify-content:space-between;gap:24px;align-items:start;padding-bottom:19px;border-bottom:1px solid var(--line)}
+.consultation-card-top>div{display:flex;flex-direction:column;gap:5px}.consultation-card-top span{font-size:9px;letter-spacing:.16em;color:var(--gold3)}.consultation-card-top strong{font-family:var(--display-serif);font-size:23px;font-weight:500;color:#30291f}.consultation-card-top small{font-size:8px;letter-spacing:.15em;color:#9a8c78}
+.consultation-card-lead{margin:24px 0 22px;max-width:720px;color:#5f574b;font-size:15px;line-height:1.85;word-break:keep-all}
+.consultation-card-points{border-top:1px solid rgba(141,109,56,.18)}.consultation-card-points>div{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(141,109,56,.16)}.consultation-card-points span{font-family:var(--serif);font-size:14px;color:var(--gold3)}.consultation-card-points p{margin:0;color:#6e6457;font-size:12.5px;line-height:1.6;word-break:keep-all}
+.consultation-external{width:100%;margin-top:24px;justify-content:space-between}.consultation-external i{font-style:normal;font-size:20px;color:var(--gold3)}.consultation-card-note{margin:12px 0 0;color:#8a8071;font-size:10.5px;line-height:1.55}
+@media(max-width:760px){.consultation-card{margin-top:30px;padding:24px}.consultation-card-top strong{font-size:20px}.consultation-card-lead{font-size:14px}.consultation-card-points>div{grid-template-columns:34px 1fr}.consultation-external{min-width:0}}

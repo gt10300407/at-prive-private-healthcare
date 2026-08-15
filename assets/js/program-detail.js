@@ -130,7 +130,7 @@
             <p class="kicker gold">${esc(axisLabel)}</p>
             <h2>${esc(p.ko)}</h2>
             <p>${esc(introCopy)}</p>
-            <div class="detail-cta"><a class="button luxury-cta ink" href="index.html#contact"><span>PRIVATE CONSULTATION</span><b>프라이빗 상담</b></a><a class="detail-back" href="programs.html">전체 프로그램 <i>↗</i></a></div>
+            <div class="detail-cta"><a class="button luxury-cta ink" href="https://docs.google.com/forms/d/e/1FAIpQLScWj8HadYKhN0u5T3_wSdlQ-C8OEm1KLfwsCdRxDvk8ebdHuA/viewform" target="_blank" rel="noopener noreferrer"><span>PRIVATE CONSULTATION</span><b>프라이빗 상담</b></a><a class="detail-back" href="programs.html">전체 프로그램 <i>↗</i></a></div>
           </div>
           <div class="detail-list luxury-audience">
             <h3>SELECTED FOR</h3>

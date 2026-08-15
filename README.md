@@ -241,3 +241,12 @@ This build is the agreed first desktop baseline before MK2 content/editorial com
 - Restored R6-like proportions for portrait, typography, competencies and credential folio.
 - Founder remains a full desktop chapter (`100svh`) so the Consultation section does not visually leak into the same viewport.
 - Height is controlled mainly through outer spacing and moderate panel sizing, not by squeezing text and cards.
+
+
+## R10 — Google Form Consultation Connected
+- Connected all `PRIVATE CONSULTATION / 프라이빗 상담` CTAs to the published Korean Google Form.
+- Google Form: `https://docs.google.com/forms/d/e/1FAIpQLScWj8HadYKhN0u5T3_wSdlQ-C8OEm1KLfwsCdRxDvk8ebdHuA/viewform`
+- Removed the old browser `mailto:` consultation form and its JavaScript handler.
+- Replaced the old form UI with an at PRIVÉ-styled consultation handoff card.
+- The Google Form opens in a new tab so the at PRIVÉ site visual system remains intact.
+- Direct email and VIP phone contact information remain available in the Contact section.
