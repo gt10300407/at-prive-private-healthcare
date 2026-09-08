@@ -2710,3 +2710,24 @@ a[href="#founder"] {
   .home-page .hero-actions .text-link{min-height:44px}
   .home-page .hero-dossier{display:none}
 }
+
+/* Navigation toggle: three distinct lines at rest, a centered close icon when expanded. */
+.menu-toggle{position:relative}
+.menu-toggle span{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:26px;
+  height:1px;
+  margin:0;
+  background:currentColor;
+  transform-origin:center;
+  transition:transform .24s ease,opacity .18s ease;
+}
+.menu-toggle span:nth-child(1){transform:translate(-50%,-7px)}
+.menu-toggle span:nth-child(2){transform:translate(-50%,-50%)}
+.menu-toggle span:nth-child(3){transform:translate(-50%,6px)}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
+.menu-toggle:active span{opacity:.65}
