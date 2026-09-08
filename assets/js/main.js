@@ -2,7 +2,17 @@
   const header=document.getElementById('siteHeader'),scroller=document.querySelector('.snap-shell');
   const onScroll=()=>header?.classList.toggle('scrolled',(scroller?.scrollTop||window.scrollY)>40);scroller?.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('scroll',onScroll,{passive:true});
   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-  const toggle=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');toggle?.addEventListener('click',()=>{const open=!menu.classList.contains('open');menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open))});menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true');toggle?.setAttribute('aria-expanded','false')}));
+  const toggle=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');
+  const setMenu=open=>{
+    menu?.classList.toggle('open',open);
+    menu?.setAttribute('aria-hidden',String(!open));
+    toggle?.setAttribute('aria-expanded',String(open));
+    toggle?.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');
+    document.body.classList.toggle('menu-open',open);
+  };
+  toggle?.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+  menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu?.classList.contains('open')){setMenu(false);toggle?.focus()}});
   const fab=document.getElementById('conciergeFab'),panel=document.getElementById('conciergePanel'),panelClose=document.getElementById('panelClose');
   const toggleFab=()=>fab?.classList.toggle('fab-ready',(scroller?.scrollTop||window.scrollY)>(window.innerHeight*.72));
   scroller?.addEventListener('scroll',toggleFab,{passive:true});window.addEventListener('scroll',toggleFab,{passive:true});toggleFab();
