@@ -1,0 +1,60 @@
+name: Deploy to Cafe24
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: cafe24-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare website
+        run: |
+          mkdir -p _deploy
+
+          rsync -a ./ _deploy/ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'README.md' \
+            --exclude 'docs/' \
+            --exclude '_deploy/'
+
+      - name: Install sshpass
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y sshpass
+
+      - name: Register Cafe24 server
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H -p 22 220.73.160.56 >> ~/.ssh/known_hosts
+
+      - name: Deploy to Cafe24
+        env:
+          SSHPASS: ${{ secrets.CAFE24_PASSWORD }}
+        run: |
+          if [ -z "$SSHPASS" ]; then
+            echo "CAFE24_PASSWORD secret이 없다."
+            exit 1
+          fi
+
+          tar -C _deploy -czf - . | \
+          sshpass -e ssh \
+            -o PreferredAuthentications=password \
+            -o PubkeyAuthentication=no \
+            -p 22 \
+            atprive@220.73.160.56 \
+            'cd /atprive/www && rm -f hosting_index.html && tar -xzf -'
+
+          echo "Cafe24 배포 완료"
